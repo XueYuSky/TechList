@@ -1,0 +1,57 @@
+site_name: 我的技术清单
+site_url: https://xueyusky.cn/TechList
+site_description: Project documentation with Markdown.
+site_author: XueYuSky
+
+repo_url: https://github.com/XueYuSky/TechList
+edit_uri: ""
+
+theme:
+    name: material
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - django
+
+nav:
+    - 首页: index.md
+    - 硬件技能清单:
+        - 硬件技能框架: hardware/01硬件技能框架.md
+        - 模拟电路 : hardware/todo.md
+        - 数字电路: hardware/todo.md
+        - 高速电路: hardware/todo.md
+        - EMC与EMI: hardware/todo.md
+        - PCB设计: hardware/todo.md
+    - 嵌入式技能清单:
+        - STM32裸机项目: embdesign/STM32Basic/todo.md
+        - STM32 FreeRTOS项目: embdesign/todo.md
+        - RTOS: embdesign/todo.md
+    - 上位机技能清单:
+        - C#: software/todo.md
+    - 网站设计技能清单:
+        - C#: webdesign/todo.md
+        - 前端: webdesign/todo.md
+        - 后端: webdesign/todo.md
+    - 移动端设计技能清单:
+        - Android: mobile/todo.md
+        - iOS: mobile/todo.md
+    - 人工智能技能清单:
+        - Python学习: ai/pythonBasic/todo.md
+
+extra_css:
+    - css/extra.css
+
+# markdown_extensions:
+#     - toc:
+#         permalink: 
+#     - admonition
+#     - def_list
+#     - mdx_gh_links:
+#         user: mkdocs
+#         repo: mkdocs
+
+copyright: Copyright &copy; 2019 <a href="https://xueyusky/">XueYuSky</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">AISKyLab</a>.
+# google_analytics: ['UA-27795084-5', 'mkdocs.org']
+
+plugins:
+    - search
