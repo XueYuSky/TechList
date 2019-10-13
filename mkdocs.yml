@@ -23,9 +23,10 @@ nav:
         - EMC与EMI: hardware/todo.md
         - PCB设计: hardware/todo.md
     - 嵌入式技能清单:
+        - 嵌入式技能框架: embdesign/todo.md
         - STM32裸机项目: embdesign/STM32Basic/todo.md
-        - STM32 FreeRTOS项目: embdesign/todo.md
-        - RTOS: embdesign/todo.md
+        - STM32 FreeRTOS项目: embdesign\STM32FreeRTOS\todo.md
+        - RTOS: embdesign\RTOS\todo.md 
     - 上位机技能清单:
         - C#: software/todo.md
     - 网站设计技能清单:
