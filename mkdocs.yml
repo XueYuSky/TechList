@@ -29,6 +29,7 @@ nav:
         - RTOS: embdesign\RTOS\todo.md 
     - 上位机技能清单:
         - C#: software/todo.md
+        - Python: program/python学习框架.md
     - 网站设计技能清单:
         - C#: webdesign/todo.md
         - 前端: webdesign/todo.md
@@ -37,7 +38,7 @@ nav:
         - Android: mobile/todo.md
         - iOS: mobile/todo.md
     - 人工智能技能清单:
-        - Python学习: ai/pythonBasic/todo.md
+        - Python学习: ai/pythonBasic/pythonBasic01.md
 
 extra_css:
     - css/extra.css
