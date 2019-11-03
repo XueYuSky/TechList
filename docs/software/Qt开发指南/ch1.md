@@ -6,7 +6,7 @@ C++是通用标准的编程语言，Qt是应用程序开发类库，而且是跨
 
 官方资源列表：[http://download.qt.io/archive/](http://download.qt.io/archive/)
 
-**注意：** 
+**注意：**  
 
  Qt 有两个许可证：LGPL和商业协议。
 
