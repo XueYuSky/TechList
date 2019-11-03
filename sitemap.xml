@@ -2,102 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://tech.xueyusky.cn/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.xueyusky.cn/rules/</loc>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/hardware/01硬件技能框架/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/embdesign/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/embdesign/STM32Basic/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/embdesign/STM32FreeRTOS/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/embdesign/RTOS/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/program/python学习框架/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/software/Qt开发指南/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/software/CSharp/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/webdesign/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/webdesign/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/webdesign/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/mobile/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/mobile/todo/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://tech.xueyusky.cn/ai/pythonBasic/pythonBasic01/</loc>
-     <lastmod>2019-10-27</lastmod>
+     <lastmod>2019-11-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.xueyusky.cn/industrialDesign/</loc>
+     <lastmod>2019-11-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
