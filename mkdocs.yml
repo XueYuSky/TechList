@@ -18,7 +18,7 @@ nav:
     - 标准、规范与规则: 
         - 目录清单: rules/index.md
     - 硬件技能清单:
-        - 硬件技能框架: hardware/01硬件技能框架.md
+        - 硬件技能框架: hardware/index.md
         - 模拟电路 : hardware/todo.md
         - 数字电路: hardware/todo.md
         - 高速电路: hardware/todo.md
