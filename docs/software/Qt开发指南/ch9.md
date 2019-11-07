@@ -32,3 +32,5 @@ QT_CHARTS_USE_NAMESPACE
 - **Qt5.12**
 - **Qt5.13**
 - [**Qt5.14**](https://www3.sra.co.jp/qt/relation/doc-snapshot/qtcharts/qchart.html)
+
+## 9.4 图表的其他操作
