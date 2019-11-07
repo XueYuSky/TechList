@@ -30,11 +30,10 @@ nav:
         - STM32 FreeRTOS项目: embdesign/STM32FreeRTOS/todo.md
         - RTOS: embdesign/RTOS/todo.md 
     - 上位机技能清单: 
-        - Python: program/python学习框架.md
         - Qt: software/Qt开发指南/index.md
+        - Python: program/python学习框架.md        
         - C#: software/CSharp/index.md
     - 网站设计技能清单:
-        - C#: webdesign/todo.md
         - 前端: webdesign/todo.md
         - 后端: webdesign/todo.md
     - 移动端设计技能清单:
@@ -57,7 +56,7 @@ extra_css:
 #         user: mkdocs
 #         repo: mkdocs
 
-copyright: Copyright &copy; 2019 <a href="https://xueyusky/">XueYuSky</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">AISKyLab</a>.
+copyright: Copyright &copy; 2019 <a href="https://xueyusky/">XueYuSky</a>, Maintained by the <a href="https://aiskylab.com">AISKyLab</a>.
 # google_analytics: ['UA-27795084-5', 'mkdocs.org']
 
 plugins:
