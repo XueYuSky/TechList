@@ -15,10 +15,15 @@
 ### AD原理图设计规范
 
 ### PCB设计通用规范
+1. [电子元器件封装设计规范](电子元器件封装设计规范.md)
 
 ### AD PCB设计规范
 
 ## 编程规范清单
+
+[谷歌编程规范](https://zh-google-styleguide.readthedocs.io/en/latest/)
+
+我的规范：
 
 ### C语言编程规范
 
