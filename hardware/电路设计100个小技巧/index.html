@@ -692,71 +692,71 @@
 <p>非常感谢<a href="https://www.youtube.com/channel/UCJQkHVpk3A8bgDmPlJlOJOA">Robert Feranec</a>在谷歌上分享的硬件设计技巧，因为国内的你很可能访问不了，所以我将这些小技巧整理下来，并且称之为“<strong>硬件设计黄金守则100条</strong>”。请思考我们为什么要遵守这些守则，他们会给我们带来什么好处？</p>
 <p>以下是这些守则：</p>
 <ol>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxxxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xxx</li>
-<li>xx</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
+<li>低频电路中的串扰</li>
+<li>如果有足够的空间，请将信号线分散开</li>
+<li>使用“+”作为<strong>电源网络</strong>的<strong>正极前缀</strong></li>
+<li>在图纸的端口处添加页面序号引用（Page Reference）</li>
+<li>设计制作小型测试电路板</li>
+<li>始终为每种组件（器件）类型创建特定的原理图符号，减少手动处理BOM操作</li>
+<li>为你的桌子设置合适的高度</li>
+<li>你该在大电流走线中使用多种过孔。</li>
+<li>选择2-3家大型器件供应商作为你的器件供应链</li>
+<li>一旦你命名了一个网络，使用复制粘贴功能而不要再去手动填写</li>
+<li>不要忘记在你的板子上放置安装孔（mounting holes）</li>
+<li>在原理图中放置有用的注释、屏幕截图或者数据表格</li>
+<li>请注意是否应将连接器直接放在边缘或者应该放置在板子的外面</li>
+<li>如果您的组件上有裸露的焊盘，请考虑将焊膏分成更小的碎片（Top/bot paste）</li>
+<li>创建一个TODO文件以列出下一个电路板版本的更改</li>
+<li>使用<strong>串联终端电阻器</strong>可能有助于降低串扰</li>
+<li>对于复杂的电路板，必须至少要构建3个原型，最好要构建5个原型</li>
+<li>始终在带状电缆接头（ribbon cable）周围创建一个边框壳体(BOX)</li>
+<li><strong>始终确保原理图中的引脚号指向封装中正确的引脚</strong>（二极管，三极管，MOSFET，Button……）</li>
+<li>不要忘记热分布</li>
+<li>如果可能，请使用两个烙铁</li>
+<li>ESD保护应尽可能靠近连接器放置</li>
+<li>不要害怕自己创建组件</li>
+<li>将SMT组件的封装的参考点（x = 0，y = 0的点）放置在组件的中间，或考虑将其放置在重心中</li>
+<li>尝试在信号之间使用尽可能大的间隙/间隙</li>
+<li>如果您是内存布局的新手，请不要将内存芯片放置在离CPU太近的位置</li>
+<li>使用至少两个显示器</li>
+<li>当您寻找组件时，您该尝试在供应商网站上搜索</li>
+<li>确保在连接器上连接了足够的引脚以承载大电流</li>
+<li>在您的电路板上做纸模型</li>
+<li>原理图页面名称中包含页码序号</li>
+<li>一定要在环境室（environmental chamber-环境试验箱）中进行测试</li>
+<li>如果可以，请在<strong>调试或测试期间</strong>进行维修时尝试使用<strong>含铅锡</strong></li>
+<li>看看您的竞争对手正在使用什么（解决方案）</li>
+<li>在电源上使用铁氧体磁珠或0R电阻</li>
+<li>购买一个好的鼠标</li>
+<li><strong>使用“ .Checked PCB” “.Checked SCH” “.Creator”作为组件（器件）参数</strong></li>
+<li>将基准（fiducials）放置在PCB角落和安装SMD组件的一侧</li>
+<li>请注意<strong>如何排序连接器上的引脚</strong></li>
+<li>尽可能少使用芯片制造商的支持</li>
+<li>在某些组件（连接器，插槽等）的丝网印刷上添加更多信息</li>
+<li>创建装配图，和描述每个组件在PCB上位置的文档</li>
+<li>创建原理图符号时，列出所有引脚替代功能</li>
+<li>在BGA下进行放置时，首先只检查可用空间在哪里，然后再做一次</li>
+<li>为您的项目创建有用的文件夹结构</li>
+<li>检查您封装的针脚顺序</li>
+<li>使用具有良好软件支持的芯片</li>
+<li><strong>导入参考原理图</strong></li>
+<li>将晶体放置在靠近芯片的位置，以使走线尽可能短</li>
+<li>阅读勘误文件（Errata documents）</li>
+<li>在原理图中，请始终创建包含页面列表和页码的封面</li>
+<li>在电源放置中，将输出电容器放置在靠近电源输出的位置</li>
+<li>（如果您的CAD系统支持）创建网络类（net classes）</li>
+<li>将通孔组件的封装参考点放置到引脚1</li>
+<li>即使电阻和电容器的尺寸相同，也要使用不同的封装（例如0805）</li>
+<li>如果您要手动焊接BGA（例如通过热风枪），请注意它何时位置下降</li>
+<li>如果您正在测试原型并且出了点问题，请不要继续连接其他原型</li>
+<li>（如果您的CAD软件支持）创建电路板变体（ board variants）</li>
+<li>使用可选电阻器将一个<strong>接口重新路</strong>由到更多地方(<strong>非常好的建议</strong>)</li>
+<li>在原理图符号和封装之间使用相同数量的引脚和焊盘</li>
+<li>不要忘了VIA的宽高比（VIA aspect ratio）</li>
+<li>在封面上，包含<strong>原理图的状态</strong>（Draft,Preliminary,Checked,Released）</li>
+<li>考虑将模拟电路放置在PCB的角落</li>
+<li>备份并可能对项目文件夹进行版本控制</li>
+<li>如果不确定某些模块是否有用，请在原理图中添加上它</li>
 <li>在电源Netname中包含电源电压值。</li>
 <li>在你连接信号线之前，确认所有BGA封装的<strong>引脚都做好扇出</strong>，并且已经放好了所有的BHA过孔。</li>
 <li>将高的元器件放置到板子的同一面。</li>
@@ -775,23 +775,23 @@
 <li>原理图中根据PCB中的要靠近的管脚，放置原理图中的元器件</li>
 <li>一定要给你的封装（FootPrint）增加Assembly层。</li>
 <li>注意用来连接<strong>过孔</strong>或者<strong>通孔</strong>的不同的连接方式。<a href="https://www.youtube.com/watch?v=12vnBMqWaPc&amp;list=PLXvLToQzgzddPKq_txEXNe0pxaSHqPtMO&amp;index=18">Youtube</a></li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
-<li>x</li>
+<li>将热组件放在顶部</li>
+<li>如果您在PCB上没有空间，请考虑使用支架组件（stands off components）</li>
+<li>完成项目后，将原理图打印为PDF</li>
+<li>在项目名称和PCB文件名中使用电路板版本号</li>
+<li>将“仅PCB”组件添加到原理图中（安装孔，基准点等）</li>
+<li>拆焊时，不要害怕使用大量焊料</li>
+<li>晶体也可以放置在PCB的另一侧，只需保持走线较短</li>
+<li>在原理图中，标记可能不安装的组件</li>
+<li>在带有裸露焊盘（EP）的组件下，您可能希望将去耦电容器放置在GND焊盘放置于EP下方的方式</li>
+<li>在每个页面的顶部放一个大标题，在每个芯片/连接器上放一个小标题</li>
+<li>不要使用4根导线交叉结</li>
+<li>您可能需要在开始进行布局之前将所有组件都放置在板上。</li>
+<li>将引脚放置在原理图符号中，易于阅读且一致</li>
+<li>在布局期间，请考虑在PCB中隐藏组件标识</li>
+<li>不要忘记放置其他安装孔（例如用于散热片）</li>
+<li>您的产品应经过ESD放电测试</li>
+<li>x创建电路板发布程序</li>
 </ol>
                 
                   
