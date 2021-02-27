@@ -1,108 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://tech.xueyusky.cn/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/rules/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/hardware/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.xueyusky.cn/hardware/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+    </url><url>
+     <loc>https://tech.xueyusky.cn/hardware/AltiumDesigner%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/</loc>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/embdesign/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.xueyusky.cn/embdesign/STM32Basic/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+    </url><url>
+     <loc>https://tech.xueyusky.cn/embdesign/ToolsAndChains/</loc>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.xueyusky.cn/embdesign/STM32FreeRTOS/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+    </url><url>
+     <loc>https://tech.xueyusky.cn/embdesign/STM32Basic/</loc>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.xueyusky.cn/embdesign/RTOS/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+    </url><url>
+     <loc>https://tech.xueyusky.cn/embdesign/STM32FreeRTOS/</loc>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.xueyusky.cn/software/Qt开发指南/</loc>
-     <lastmod>2020-01-30</lastmod>
+    </url><url>
+     <loc>https://tech.xueyusky.cn/embdesign/RT-Thread/</loc>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.xueyusky.cn/program/python学习框架/</loc>
-     <lastmod>2020-01-30</lastmod>
+    </url><url>
+     <loc>https://tech.xueyusky.cn/software/Qt%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/</loc>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://tech.xueyusky.cn/program/python%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</loc>
+     <lastmod>2021-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://tech.xueyusky.cn/software/CSharp/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/webdesign/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/webdesign/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/mobile/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/mobile/todo/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/ai/pythonBasic/pythonBasic01/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://tech.xueyusky.cn/industrialDesign/</loc>
-     <lastmod>2020-01-30</lastmod>
+     <lastmod>2021-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

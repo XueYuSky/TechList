@@ -1,0 +1,1633 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Project documentation with Markdown.">
+      
+      
+      
+        <meta name="author" content="XueYuSky">
+      
+      
+        <link rel="canonical" href="https://tech.xueyusky.cn/hardware/AltiumDesigner%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/2-AltiumDesigner%E5%8E%9F%E7%90%86%E5%9B%BE%E8%AE%BE%E8%AE%A1/">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.2">
+    
+    
+      
+        <title>Altium Designer原理图设计 - 我的技术清单</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#altium-designer" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://tech.xueyusky.cn" title="我的技术清单" class="md-header__button md-logo" aria-label="我的技术清单">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            我的技术清单
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Altium Designer原理图设计
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/XueYuSky/TechList" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://tech.xueyusky.cn" title="我的技术清单" class="md-nav__button md-logo" aria-label="我的技术清单">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    我的技术清单
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/XueYuSky/TechList" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        标准、规范与规则
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="标准、规范与规则" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          标准、规范与规则
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rules/" class="md-nav__link">
+        目录清单
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        硬件技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="硬件技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          硬件技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        硬件技能框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        模拟电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        数字电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        高速电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        EMC与EMI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        PCB设计
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        嵌入式技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="嵌入式技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          嵌入式技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/" class="md-nav__link">
+        嵌入式技能框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/ToolsAndChains/" class="md-nav__link">
+        ToolsAndChains
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/STM32Basic/" class="md-nav__link">
+        STM32裸机项目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/STM32FreeRTOS/" class="md-nav__link">
+        STM32 FreeRTOS项目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/RT-Thread/" class="md-nav__link">
+        RT-Thread
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        上位机技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="上位机技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          上位机技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/Qt%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program/python%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/CSharp/" class="md-nav__link">
+        C#
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        网站设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网站设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          网站设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webdesign/todo/" class="md-nav__link">
+        前端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webdesign/todo/" class="md-nav__link">
+        后端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        移动端设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="移动端设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          移动端设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile/todo/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile/todo/" class="md-nav__link">
+        iOS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        人工智能技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="人工智能技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          人工智能技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/pythonBasic/pythonBasic01/" class="md-nav__link">
+        Python学习
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        工业设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="工业设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          工业设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../industrialDesign/" class="md-nav__link">
+        目录清单
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    原理图设计简介
+  </a>
+  
+    <nav class="md-nav" aria-label="原理图设计简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主窗口简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    文件管理系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    开发环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新建项目和文档
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    原理图编辑器界面组成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    原理图设计一般流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    原理图环境设置
+  </a>
+  
+    <nav class="md-nav" aria-label="原理图环境设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    原理图图纸设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    原理图工作环境设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    设置原理图常规的环境参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    设置图形编辑器的环境参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    设置编译器参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    设置原理图自动聚焦参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    设置元件库自动缩放参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    设置网格参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    设置切割线参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    设置默认参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    图形工具绘制图形
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawing-tools" class="md-nav__link">
+    绘图工具(Drawing Tools)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    原理图基础操作
+  </a>
+  
+    <nav class="md-nav" aria-label="原理图基础操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    认识元器件库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    元器件放置和属性编辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    元器件位置调整
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    绘制电路原理图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    原理图高级应用
+  </a>
+  
+    <nav class="md-nav" aria-label="原理图高级应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    原理图设计常用操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    图纸的缩放移动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    元器件编号管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    元器件查找与替换操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    元器件过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb" class="md-nav__link">
+    原理图中添加PCB设计规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    原理图查错及编译
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    层次化原理图基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    层次原理图基本构成和组成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    层次画原理图的设计方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    层次原理图的切换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    由顶层原理图切换到相应的子电路原理图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    由子原理图切换到顶层原理图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    打印与报表输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    打印输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    网络表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bom" class="md-nav__link">
+    元器件报表（BOM）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="altium-designer">Altium Designer原理图设计</h1>
+<p><strong>原理图，是电路板在设计原理上的表现。</strong></p>
+<p>这篇文章主要介绍关于原理图设计需要了解的知识。</p>
+<p>主要分为：</p>
+<p>基础知识，具体包括原理图的组成、原理图编辑器的界面、原理图绘制的流程，新建与保存原理图文件、原理图环境设置，原理图的基础操作等。</p>
+<p>高级应用部分，主要包括层次化原理图的概念，组成，设计方法以及后期的打印与报表输出灯。</p>
+<h2 id="_1">原理图设计简介</h2>
+<p>Altium
+Desingner原理图设计是指在图纸上，放置代表实际元器件的各种符号，根据电路设计具体要求，编辑各个元器件的属性，将各个元器件符号连接起来，建立具有电气意义的连接。</p>
+<p>在Altium Designer中，建立电气连接，可以通过以下方式：</p>
+<p>物理连接：将所有元器件放入一张图纸，使用导线直接连接各个元器件；</p>
+<p>逻辑连接： 通过网络标签(NetLaber)或者跨页连接标签（Off Sheet
+Connector）连接多张图纸上的元器件；</p>
+<p>通常实际项目中是物理连接和逻辑连接相结合，建立完整的电路原理图设计。</p>
+<h3 id="_2">主窗口简介</h3>
+<p>Altium Desiger
+20启动进入主窗口后，如图2-1所示，我们可以在这个窗口进行如创建项目，打开文件，学习官方推荐内容等。</p>
+<p><img alt="" src="media/5f8a07c6d7fa586607d235e566f8ece7.png" /></p>
+<p>工程的新建，保存，导入等可以通过菜单栏处的File(文件)按钮执行。</p>
+<p>打开后的项目文件将在项目工作空间展示。</p>
+<p>首页（Home）处有官方的学习内容推荐和官方社区交流中心，我们可以通过这里学习更多使用AD进行电路设计的技巧。</p>
+<p>在主窗口“菜单栏”右侧，
+“系统参数设置”处单击，可以单出“Preference”（用户偏好）窗体，可以在这里设置软件的默认参数。</p>
+<p><img alt="" src="media/210b436f6ab59f8e7c71159b446da63b.png" /></p>
+<h3 id="_3">文件管理系统</h3>
+<p>Altium Desinger
+通过“Project”(项目或工程,后文统称项目),来组织和管理设计时的文件以及设计文件生成的相关文件。</p>
+<p>AD20中目前常用的文件类型主要有以下几种：</p>
+<p><img alt="" src="media/2bc5f4c24b83e279c79f9b8b711e5a74.png" /></p>
+<p>Project：项目管理文件，后缀.PrjPcb</p>
+<p>Schematic: 原理图图纸文件，后缀.SchDoc</p>
+<p>PCB: PCB图纸文件，后缀.PcbDoc</p>
+<p>Draftsman Document: 草图文件，用于生成各种机械，生产相关的草图，后缀.PCBDwf</p>
+<p>CAM Document：Gerber文件，这个通常不是手动建立，而是项目完成后通过PCB生成。</p>
+<p>Output Job File：
+输出工作配置文档，这个是一个非常好用的工具。可以对项目进性配置，调用AD内部脚本，一键批量处理多个任务，生成多种需要的文档。在项目设计后期，进性成果汇总和归档时非常方便。</p>
+<p>Component: 元器件文件，这个功能需要结合Altium 365或者Concord
+Pro使用，是新版本软件的一个比较高级的元器件管理功能之一。不适用云端管理元器件时，一般不使用。</p>
+<p>Liberary:
+传统的元器件库相关的文件，主要包括集成库管理文件，原理图符号库文件，封装库文件，焊盘过孔库文件，数据库库文件，SVN数据库文件和数据库链接文件等。</p>
+<p>Script: 脚本文件，可以建立脚本文件，执行批量自动化操作等。</p>
+<p>Mixed-Signal Simulation: 混合信号仿真文件。</p>
+<p>Design Project Group: 项目管理组文件，可以集中管理多个相关项目的文件。</p>
+<p>AD中，所有上面列出的文件可以以单个文件的形式保存，可以单独打开。也可以以项目文件统一管理和组织。</p>
+<p><img alt="" src="media/558319b51ccdd0bd74d27a47e434e9b3.png" /></p>
+<p>按其大的类别分，可以分为项目文件，自由文件和存盘文件。</p>
+<p>项目文件：只起到管理和统一组织文档的作用，项目中的各个文件均以单独文件的形式保存。</p>
+<p>自由文件：只游离于被项目管理的文件，在项目管理空间中，以“Free
+Document”文件分类存在。</p>
+<p>存盘文件：是指将项目文件存盘时，AD将单个设计文件保存下来的文件。</p>
+<h3 id="_4">开发环境</h3>
+<p>Altium
+Designer中，进行电路设计，需要在几种不同风格的面板环境中进行切换。下面是常用的集中环境的介绍。</p>
+<ol>
+<li>
+<p>原理图设计环境</p>
+<p><img alt="" src="media/678e9f1b651bb51e68948265f4a5e700.png" /></p>
+</li>
+<li>
+<p>PCB设计环境</p>
+<p><img alt="" src="media/d96b254d9cfaf93f479ea45b38b9de5b.png" /></p>
+</li>
+<li>
+<p>仿真编辑环境</p>
+<p>AD20支持仿真，下面是官方的PDN仿真示意图。后续将写一篇详细的文章介绍这个功能。</p>
+<p>具体操作可以参考：<a href="https://www.altium.com/cn/documentation/altium-designer/pdnanalyzer-pnl-pdnanalyzerpdn-analyzer-ad">https://www.altium.com/cn/documentation/altium-designer/pdnanalyzer-pnl-pdnanalyzerpdn-analyzer-ad</a></p>
+<p><img alt="" src="media/9fb97505b9394d215b44f24f4b8f75d8.png" /></p>
+</li>
+</ol>
+<h3 id="_5">新建项目和文档</h3>
+<p>点击“File”-“New”-“Project”。</p>
+<p><img alt="" src="media/6d2d82f2d1681eadcb77594e07940854.png" /></p>
+<p>弹出新的对话框：</p>
+<p><img alt="" src="media/34d7b5fc6c5c8d3b3f7e2b04149220c9.png" /></p>
+<p>之后，可以在项目工作空间的项目名称处，右击，“Add New to
+Project”-“Schematic”,在左侧“Project”面板，将出现一个新的原理图文件。Sheet1.SchDoc为默认的新建文件名，文件自动添加到项目中。</p>
+<h3 id="_6">原理图编辑器界面组成</h3>
+<p>新建并打开原理图图纸后，窗口中会多出现几个菜单项和工具项。</p>
+<p><img alt="" src="media/44b5f71d242a886d2ceba0b0bf2231f8.png" /></p>
+<p>分别是，原理图工具栏和元器件库。</p>
+<p>如1.3节显示的是是一张已放置原理图和布线的原理图示例。</p>
+<p>图纸上主要包含的元素有：</p>
+<ol>
+<li>
+<p>元器件：现实使用的元件在图纸中的抽象表示。</p>
+</li>
+<li>
+<p>连接导线：现实中电路板的连接导线在图纸中的抽象表现。</p>
+</li>
+<li>
+<p>端口：原理图中为了跨原理图进行电气连接引入的具有电气特性的符号。</p>
+</li>
+<li>
+<p>网络标号：功能和端口类似。</p>
+</li>
+<li>
+<p>电源符号：表示电路中具有电源特性的电源网络。</p>
+</li>
+</ol>
+<p>原理图设计过程中，只是元件和连接关系的抽象化体现，不要要考虑元器件符号的尺寸概念。</p>
+<h3 id="_7">原理图设计一般流程</h3>
+<p>原理图设计是电路板实际进行功能设计的第一步，是制板和仿真等后续步骤的基础。原理图的正确性将影响整个设计的成功和失败。</p>
+<p>原理图设计应大致遵循以下流程步骤：</p>
+<h2 id="_8">原理图环境设置</h2>
+<p>初学Altium
+Desinger时,我们可以使用软件默认的图纸模板。大多数情况下可以满足我们设计电路的要求。但随着我们的项目复杂度变化，我们需要对图纸进行必要的设置。比如，更改图纸尺寸的大小，设置具有统一风格和参数的图纸等。</p>
+<p><img alt="" src="media/eaa53249c872a7d67679a0acd8da682d.png" /></p>
+<p>默认图纸格式</p>
+<p><img alt="" src="media/a0fb5ddcde21ed5d678d4636e8868f30.png" /></p>
+<p>定制风格的图纸</p>
+<ol>
+<li></li>
+<li></li>
+</ol>
+<h3 id="_9">原理图图纸设置</h3>
+<p>常用的原理图图纸参数设置有：
+图纸尺寸，图纸方向，图纸标题，图纸边框，图纸颜色，图纸使用的字体等。</p>
+<p><img alt="" src="media/45d58e293e65e2c0d8f7d05053465397.png" /></p>
+<p>而设置图纸参数信息，比如设计者，所属公司，项目，时间现象，审核信息，以及其他特殊的自定义参数，需要在“Parameter”栏进行设置。</p>
+<p><img alt="" src="media/951955e1393cc16501c0c23d6d2781b7.png" /></p>
+<h3 id="_10">原理图工作环境设置</h3>
+<p>原理图工作环境的参数影响我们绘图过程中的效率和正确性，初学时我们可以使用默认的工作环境参数。但随着我们项目的复杂性和我们使用熟练度的提升，我们应当学会自己根据自己的习惯调整合适的环境参数。</p>
+<ol>
+<li>
+<ol>
+<li></li>
+</ol>
+</li>
+</ol>
+<h3 id="_11">设置原理图常规的环境参数</h3>
+<blockquote>
+<p>设置这些参数需要点击顶部菜单栏右侧的“设置”按钮：</p>
+<p><img alt="" src="media/8c4f0943c9da2a0af3053456502b0828.png" /></p>
+<p>弹出“Preference”,选择“Schematic”。</p>
+</blockquote>
+<p><img alt="" src="media/4dcddf75834d86bc542ed021390b2266.png" /></p>
+<h3 id="_12">设置图形编辑器的环境参数</h3>
+<p>这个需要通过“Graphical Editing”标签来更改。</p>
+<p><img alt="" src="media/723ca489618b0db981269995cd949c4f.png" /></p>
+<h3 id="_13">设置编译器参数</h3>
+<p>这个需要通过“Compiler”标签来更改。</p>
+<p><img alt="" src="media/a417f219043b6124e302e613eded6d08.png" /></p>
+<h3 id="_14">设置原理图自动聚焦参数</h3>
+<p>这个需要通过“AutoFocus”标签来更改。</p>
+<p><img alt="" src="media/a5efae85d88ecd41948f49720b4204df.png" /></p>
+<h3 id="_15">设置元件库自动缩放参数</h3>
+<p>这个需要通过“Library AutoZoom”标签来更改。</p>
+<p><img alt="" src="media/05fe42a198481a94fa684fcf4c8832ba.png" /></p>
+<h3 id="_16">设置网格参数</h3>
+<p>这个需要通过“Grids”标签来更改。</p>
+<p><img alt="" src="media/cab823abab19ec0a76dbb2fab04e437f.png" /></p>
+<h3 id="_17">设置切割线参数</h3>
+<p>这个需要通过“Break Wire”标签来更改。</p>
+<p><img alt="" src="media/37b6265120f58b4e5ff84f325771e325.png" /></p>
+<h3 id="_18">设置默认参数</h3>
+<p>这个需要通过“Defaults”标签来更改。</p>
+<p><img alt="" src="media/8ade0d603dd68cc70d3f244d79dde12c.png" /></p>
+<h3 id="_19">图形工具绘制图形</h3>
+<h3 id="drawing-tools">绘图工具(Drawing Tools)</h3>
+<p>常用的绘图工具的工具主要如下图所示：</p>
+<p><img alt="" src="media/195ed533f9ece60f733961a7fb6f8fcc.png" /></p>
+<p>需要注意的是，这个绘图工具里绘制的这些图形，都不具有电气连接特性，只用于图纸中标识标记使用。</p>
+<h2 id="_20">原理图基础操作</h2>
+<p>原理图基础操作主要包括加载元器件库，放置元器件和属性编辑，元器件位置调整，绘制原理图等。</p>
+<ol>
+<li></li>
+</ol>
+<h3 id="_21">认识元器件库</h3>
+<p>右下角“Panels”中，选择“Component”，即可打开元器件库面板。可以在在这个面板完成元器件的查找，元器件库的加载，卸载和更换等功能。</p>
+<p><img alt="" src="media/a3b82e69e7d1771ed17437d511d6e7d3.png" /></p>
+<h3 id="_22">元器件放置和属性编辑</h3>
+<p>加载到“元件库”面板的库要占用系统内存，当用户加载的元器件库过多，系统内存占用越严重。所以，我们可以将元器件库分类设计，按需加载。</p>
+<p>点击面板上的器件库加载按钮，弹出的下拉列表选择“Flie-based Libraries
+Preferences”。</p>
+<p><img alt="" src="media/e1eb4a23f6da2a37823cc0a7ecbe7f24.png" /></p>
+<p>之后弹出新的对话框：</p>
+<p><img alt="" src="media/ccaf7d43c78cb109cc16a586813002c8.png" /></p>
+<p>这个对话框中可以为所有项目配置要加载的元器件库，也可以为某个项目加载专用的元器件库，设置查找路径，设置元器件库的默认路径等。</p>
+<p>需要安装某类元器件的库时，点击“Install”和“Remove”进行安装和卸载。</p>
+<p>放置元器件</p>
+<p>当元器件库加载后，要在原理图中放置元器件，下面以放置10KΩ 0603电阻为例：</p>
+<p>在搜索处输入参数：
+10K，列表中出现待选择的器件，左键双击或者右键单击（选择Place）</p>
+<p><img alt="" src="media/a6a381e4b5fb360e156267c538bf3e3f.png" /></p>
+<p>光标变成十字形，上面悬浮着一个10KΩ的电阻的轮廓，按键盘“Tab”键，右侧面板切换到“Properties”(属性),可以在这里对元器件属性进行编辑。</p>
+<p><img alt="" src="media/1a562b095d5b1abde26c93cce9c0461e.png" /></p>
+<p>属性编辑完成后，点击 “Enter”(回车)，可以放置元器件。</p>
+<h3 id="_23">元器件位置调整</h3>
+<p>元器件粘连在鼠标光标上时，按空格键可以旋转选器件的角度，每按一次，旋转90°。</p>
+<p>单击鼠标左键，放置元器件，放置后，如果想要旋转元器件，此时需要选中元器件，按空格键旋转。</p>
+<p>这种状态线，按按键“X”，可以左右对调元器件，按按键“Y”可以上下对调元器件。</p>
+<blockquote>
+<p><img alt="" src="media/9d4f77fd0f6a0e56c7eff32675d2732e.png" /></p>
+</blockquote>
+<p>取消选中，只需要在图纸的空白区域，单击既可以取消。</p>
+<p>要移动元器件，需要选中元器件，然后鼠标放置到元器件上左键单击，光标变为十字星型，拖动到合适的位置，松开鼠标左键即可。</p>
+<p>复制和粘贴：选中元器件的情况下，快捷键“Ctrl + C”或者“E+C”，进行复制，“Ctrl +
+V”或者“E + P”进行粘贴。</p>
+<p>阵列粘贴：这是一种批量复制粘贴的方式，选中元器件，使用“Ctrl + Shift +
+V”启动智能粘贴窗口。</p>
+<p><img alt="" src="media/9dbe77628dd73ead615bdfef7110e0f4.png" /></p>
+<p>设置好粘贴方向，数量和间距，间距一定要设置合适，否则会有元器件重叠到一起。</p>
+<p><img alt="" src="media/b5d40627db816fd770f7eb70187ca48c.png" /></p>
+<h3 id="_24">绘制电路原理图</h3>
+<p>原理图绘制需要使用原理图绘制工具栏。打开原理图时，会有下列一栏工具出现。</p>
+<p><img alt="" src="media/5bf1f75feef9e68a07d8069cff28504d.png" /></p>
+<p>第1个为选择过滤器，用于选择原理图中特定类型的对象。</p>
+<p>第2个元器件移动操作，用于快速移动元器件。</p>
+<p>第3个选择元器件操作。</p>
+<p>第4个元器件对其操作。</p>
+<p>第5个元器件查找与放置操作。</p>
+<p>第6个放置连线，总线以及网络标号等操作。</p>
+<p>第7个放置电源和接地符号等操作。</p>
+<p>第8个为放置信号线束相关的符号。</p>
+<p>第9个为层次化原理图相关的符号操作。</p>
+<p>第10个放置端口和跨页连接器灯操作。</p>
+<p>第11个放置指令类符号：参数，忽略ERC检查测试点,差分线，编译屏蔽等符号。</p>
+<p>第12个放置字符串，备注说明等。</p>
+<p>第13个放置绘图符号等。</p>
+<h2 id="_25">原理图高级应用</h2>
+<ol>
+<li></li>
+</ol>
+<h3 id="_26">原理图设计常用操作</h3>
+<h3 id="_27">图纸的缩放移动</h3>
+<p>原理图编辑过程中，进场需要对原理图图纸进行移动，切换到图纸的不同位置进行查看和操作，也需要对某个位置进行放大和缩小。</p>
+<p>执行这些操作时，可以使用键盘上的快捷键结合鼠标指针的位置快速操作，也可以只是用鼠标左右右键以及中间的滚轮实现。</p>
+<ol>
+<li>
+<p>移动图纸： 鼠标放在图纸上，鼠标右键，变成小手的符号，拖动就可以移动图纸。</p>
+</li>
+<li>
+<p>放大图纸： 快捷键“Ctrl + 鼠标滚轮向上滚动” 或者
+    鼠标移动到要放大的位置，按“Page Up” 或者 按下鼠标滚轮，向前拖动鼠标。</p>
+</li>
+<li>
+<p>缩小图纸： 快捷键“Ctrl + 鼠标滚轮向下滚动” 或者
+    鼠标移动到要缩小的位置，按“Page Down” 或者 按下鼠标滚轮，向后拖动鼠标。</p>
+</li>
+</ol>
+<h3 id="_28">元器件编号管理</h3>
+<p>一张原理图中，往往包含很多个元器件，手动的给这些元器件编号往往效率低下，而且容易出错。AD中提供了按照某种特定规则进行自动编号的功能。</p>
+<ol>
+<li>
+<p>在菜单栏“Tools”-“Annotate”-“Annotate Schematics...”</p>
+<p><img alt="" src="media/098a6774e229ccd557178c94b13f451a.png" /></p>
+</li>
+<li>
+<p>会弹出新的对话框：</p>
+<p>1处显示的是处理顺序，下拉列表共有四种：“Up Then Across”(先向上后左右),“Down
+Then Across”(先向下后左右),“Across Then Up”(先左右后向上)和“Across Then
+Down”(先左右后向下)。</p>
+<p>2处显示标号之前的序号值，3处显示的是编号之后的标号值。</p>
+<p>点击“Update Change List”可以执行全部编号更新。</p>
+<p><img alt="" src="media/28e99f8c194fb5ffe2d8ee23b50854ad.png" /></p>
+</li>
+<li>
+<p>重新编号</p>
+<p>点击“Reset All”可以对全部元器件进行重置，编号将被消除。</p>
+<p>之后再执行“Update Change List”就可以重新编号。</p>
+</li>
+</ol>
+<h3 id="_29">元器件查找与替换操作</h3>
+<blockquote>
+<p>有时候我们需要在已经裱好的元器件中，快速查找和定位一个元器件，我们可以使用“查找”功能。</p>
+<p>在原理图页面，“Ctrl + F”弹出“Find Text”对话框。</p>
+<p><img alt="" src="media/01ae8f46a0f86a51a09a6fc8b404faee.png" /></p>
+<p>可以通过Scope来定义选择要查找的器件的范围：</p>
+<p>Sheet Scope有： Current Document、Project Document、Open Document和Project
+  Physical Document。</p>
+<p>Selection有：All Objects、Selected Objects和Deselected Objects。</p>
+</blockquote>
+<h3 id="_30">元器件过滤</h3>
+<ol>
+<li>
+<p>使用Navigator(导航)面板</p>
+<p>导航面板的作用是快速浏览原理图中的元件、网络及违反射击规则的内容等。</p>
+<p>点击“Navigator”的“Interactive
+Navigation”。点击其中的网络或者元器件，可以快速定位，并高亮显示。</p>
+<p><img alt="" src="media/16e2528cb065b579e54f44d4e30338c7.png" /></p>
+</li>
+<li>
+<p>使用List(列表)面板</p>
+<p>List面板在批量操作时非常有用，比如批量复制位置和PCB复制位置和布局。这些操作在后面会有详细的实例讲解。</p>
+<p>在有下角“Panels”处打开“SCH List”</p>
+<p><img alt="" src="media/8178b2e04ccc855a215ae2a159db5287.png" /></p>
+</li>
+<li>
+<p>使用SCH Filter工具条</p>
+<p>在有下角“Panels”处打开“SCH Filter”。</p>
+<p>根据所设置的过滤器，快速浏览原理图中的元器件，网络及违反设计的内容。</p>
+<p><img alt="" src="media/346dea5217750840c2d1e2ad92a734f9.png" /></p>
+<p>“Consider objects in(对象查找范围)”下拉列表：</p>
+<p>用于设置查找的范围，总共三个选项：Current Document(当前文档)、Open
+Document(打开文档)和Project Document(项目文档)。</p>
+<p>“Find items matching these
+criteria(设置过滤器的过滤条件)”输入框：用于设置过滤器，这里可以使用路基输入语法。可以通过Helper辅助进行。点击Helper：</p>
+<p><img alt="" src="media/69ac7a52cb90f516946311a07224f021.png" /></p>
+</li>
+</ol>
+<h3 id="pcb">原理图中添加PCB设计规则</h3>
+<p>在进行PCB Layout之前，可以在原理图中通过放置PCB Layout标志，提前设置一些PCB
+Layout的规则。</p>
+<p>PCB Layout的标志使用这个符号：</p>
+<p><img alt="" src="media/c68fd2e2f01a7f0701e5894e3114710d.png" /></p>
+<p>按下Tab键，在属性中增加Rule:</p>
+<p><img alt="" src="media/c3391ff8a0805b987ccbc6fe4af90e3d.png" /></p>
+<p>之后会弹出要进行参数设置的规则对话框：</p>
+<p><img alt="" src="media/01c053ab3746ee709aeebdb9e6d4e141.png" /></p>
+<p>以设置布线时的宽度为例，选择Width Constraint，弹出参数设置：</p>
+<p><img alt="" src="media/5d295fec2494f8022bf762ac445a385f.png" /></p>
+<h3 id="_31">原理图查错及编译</h3>
+<p>原理图在设计完成后，即使人工检查也仍有可能有错误。几乎所有的ECAD软件都提供了电气规则检查的工具，可以对原理图的电气连接特性进行自动化检查，检查后的错误警告信息会在“Message”面板列出。双击信息原理图会自动调到信息对应的位置。</p>
+<p><img alt="" src="media/31f19dd9c362c9c5b0037b2559f76850.png" /></p>
+<h3 id="_32">层次化原理图基本概念</h3>
+<p>通常情况下，一个电路系统由许多小规模，逻辑清晰的电路组成。我们可以使用之前介绍的方法将这些小规模电路绘制在一张原理图上。</p>
+<p>但系统复杂的大规模电路系统，我们往往将电路按照功能或者独立性分成许多子电路，每个子电路绘制在单独的原理图上。每页上的电路抽象为一个功能模块或者“元器件”，然后通过端口、跨页连接符等连接起来，形成完整的系统电路。</p>
+<p>这样的设计方式便于多人协作，也能使系统结构更加清晰，降低出错的概率，加快设计进程。</p>
+<h3 id="_33">层次原理图基本构成和组成</h3>
+<p>Altium Designer
+中的层次化原理图设计方法十分强大，我们可以将一个电路系统划分为若干个子系统，每个子系统可以划分为若干个功能模块，每个功能模块还可以分为许多更小的基本模块。而不同的电路系统之间也有可能有许多可以共用的基本模块，我们可以将这些模块提取成可以重复使用的模块电路。</p>
+<p>下面是一个二级层次原理图的基本结构框架图：</p>
+<p><img alt="" src="media/765dd6f5eaa8e2f92c66f0e6e85f74c9.png" /></p>
+<p>这个顶层原理图主要由5张图纸符号组成，每张图纸符号代表一个相应的子原理图文件，而其中有两个子原理图仍然由多个子模块组成。</p>
+<p><img alt="" src="media/c868f709fcc9a79c1fdb07f401f668d6.png" /></p>
+<h3 id="_34">层次画原理图的设计方法</h3>
+<ol>
+<li>自上而下的层次原理图设计</li>
+</ol>
+<p>自上而下的设计方法：在绘制电路图之前，设计者应对项目整体有一个把握，把整个电路分为多个模块，确定每个模块的设计内容，然后对每个模块进行详细设计。这种方法适合设计者对电路模块划分比较清楚，有一定电路设计能力的设计人员。</p>
+<ol>
+<li>
+<p>绘制顶层原理图</p>
+<ol>
+<li>
+<p>执行“File”-“New”-“Project”-“Local Projects”,Project
+    Name处命名为：自上而下层次练习.PrjPcb。</p>
+</li>
+<li>
+<p>执行“File”-“New”-“Schematic”，“Ctrl +
+    S”保存，命名为：顶层-自上而下练习.SchDoc。设置原理图图纸参数。</p>
+</li>
+<li>
+<p>执行“Place”-“Sheet
+    Symbol”，或者点击布线工具栏中的<img alt="" src="media/56382900c94936e91c5e2b1e6df23c1f.tmp" />按钮，放置方块电路图。此时光标变成十字形并带有一个方块电路。</p>
+</li>
+<li>
+<p>移动光标到制定位置，单击鼠标确定方块电路的一个顶点，然后拖动鼠标，在合适位置再次点击鼠标左键确定方块电路的对角顶点。</p>
+<p><img alt="" src="media/a1d55c3c2b846331e69f6a3b79b388d4.png" /></p>
+<p>此时，系统仍然处于绘制方块电路的状态，用同样的方法绘制另一个方块电路。绘制完成后，单击鼠标右键退出绘制状态。</p>
+</li>
+<li>
+<p>双击绘制完成的方块电路，弹出方块电路属性设置面板，在该对话框中设置方块图属性。</p>
+<p><img alt="" src="media/06be0291b43ed69bfd4fcad04e69859e.png" /></p>
+</li>
+</ol>
+</li>
+</ol>
+<p>下面是该属性面板的主要参数解释：</p>
+<ul>
+<li>
+<p>Location(位置):方块电路左上角的坐标位置，我们可以指定和更改。</p>
+<ul>
+<li>
+<p>Property(属性):</p>
+<ol>
+<li>
+<p>Designator(标识)：设置方块电路的名称，我们设置为Mod1</p>
+<ol>
+<li>
+<p>File
+    Name(文件名)：设置该方块电路所代表的下层原理图的文件名。设置为Mod1.Schdoc</p>
+</li>
+<li>
+<p>Width和Height用于设置方块电路的长度和宽度。</p>
+</li>
+<li>
+<p>Line Style：设置方块电路边框的风格和颜色。</p>
+</li>
+<li>
+<p>Fill Color：方块电路的填充颜色及是否透明(方框打勾)。</p>
+</li>
+<li>
+<p>Sheet Entries(方块电路入口)：设置图纸入口及属性。</p>
+<p><img alt="" src="media/69cf7a3be3559cd854ee167b09e13cc9.png" /></p>
+<p>绘制完成后，方块电路出现黄色入口：</p>
+<p><img alt="" src="media/d1b6cf77b22ab11ee7a7b6abe923d4c7.png" /></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>绘制子原理图</p>
+<p>完成上一步后，我们可以在菜单栏“Design”-“Create Sheet From Sheet
+Symbol”,光标变成十字形。移动光标到方块电路内部空白处，单击鼠标右键。(也可以先将鼠标移动到方块电路上，右击，执行“Sheet
+Symbol Action”-“Create Sheet From Sheet Symbol”)。</p>
+<p>系统会自动生成一个与该方块电路同名的子原理图文件，并在原理图中生成3个与方块电路图对应的输入输出端口。</p>
+<p><img alt="" src="media/68983915bb3a7b8ed03e33b19541af53.png" /></p>
+<p><img alt="" src="media/eec6e251ee8028b69ee617345bae5315.png" /></p>
+<p><img alt="" src="media/102dec0d383f08682bce89aed2d9533f.png" /></p>
+<p>接下来我们就可以按照之前原理图基础设计方法设计这个子电路原理图了。</p>
+</li>
+<li>
+<p>自下而上的层次原理图设计</p>
+</li>
+</ul>
+<p>自下而上的设计方法：首先绘制各个子原理图，根据子原理图生成原理图符号，进而生成上层原理图，最后在顶层原理图进行连接。这种方法适用于对整体设计不是很熟悉的用户，比较适合初学者。</p>
+<ol>
+<li>
+<p>绘制子原理图</p>
+<ol>
+<li>
+<p>新建项目文件和电路原理图文件</p>
+</li>
+<li>
+<p>根据功能电路模块绘制子原理图文件</p>
+</li>
+<li>
+<p>在子原理图中放置输入输出端口。</p>
+<p>绘制完成后类似下图：</p>
+<p><img alt="" src="media/868d369d65b6f6cd22ba97f0174afeb5.png" /></p>
+</li>
+</ol>
+</li>
+<li>
+<p>绘制顶层原理图</p>
+<ol>
+<li>
+<p>在项目中新建一个原理图文件，命名为对应:子原理图名_Modu1.schdoc。在之前的子原理图空白处右击选择“Sheet
+    Actions”-“Create Sheet Symbol From Sheet”。弹出新的对话框：</p>
+<p><img alt="" src="media/4974ec06f3409b24549f4c9dd8af1ec1.png" /></p>
+<p>选择要放置子原理图方块电路的顶层原理图文件，点击“OK”进行放置。</p>
+<p>同样的方法可以将多个子电路图放置到顶层。直到完成设计。</p>
+<p><img alt="" src="media/d1a9f81d4cdfae534036c2eaee84b087.png" /></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="_35">层次原理图的切换</h3>
+<h3 id="_36">由顶层原理图切换到相应的子电路原理图</h3>
+<p>方法1：使用“Projects(项目)”面板，面板中直接点击对应的文件</p>
+<p>方法2：使用“Navigation(导航)”面板，右击，Refesh刷新后，项目的层次化结构会显示出来。可以直接双击对应的文件名打开。</p>
+<p><strong>方法3：</strong>在顶层原理图的方框图上右击，选择“Open SubSheet xxx.SchDoc”</p>
+<p><img alt="" src="media/32938b68b15e6531b5032ca602d5db48.png" /></p>
+<h3 id="_37">由子原理图切换到顶层原理图</h3>
+<p>方法1：使用“Projects(项目)”面板，面板中直接点击对应的文件</p>
+<p>方法2：使用“Navigation(导航)”面板，右击，Refesh刷新后，项目的层次化结构会显示出来。可以直接双击对应的文件名打开。</p>
+<p><strong>方法3：“Tools”-“Up/Down
+Hierarchy(上下层次)”命令，光标变成十字，移动光标到任意一个输入/输出端口处,单击，则对应的顶层原理图就会出现在编辑窗口中。并且被单击的输入/输出端口处于高亮显示状态。</strong></p>
+<p><img alt="" src="media/3f8810ac64274f9a100cce6e7922b71f.png" /></p>
+<h3 id="_38">打印与报表输出</h3>
+<p>原理图设计完成后，经常需要将某些或者全部设计数据或图纸导出，并且生成报表打印。</p>
+<h3 id="_39">打印输出</h3>
+<p>Altium Designer可以将原理图打印输出，用于原理图浏览，交流。</p>
+<p>打印之前首先进行页面设置。</p>
+<p>“File”-“Page Setup”,弹出对话框：</p>
+<p><img alt="" src="media/90b70d7be95cc5fdab49dd9aef8896b2.png" /></p>
+<p>其中：</p>
+<p>Printer Paper: 设置打印纸张栏</p>
+<p>Size: 设置打印纸的尺寸</p>
+<p>Portrait: 图纸竖直放置</p>
+<p>Landscape:图纸横放</p>
+<p>Scaling:缩放比例栏</p>
+<p>可设置“Fit Document On Page(根据页面自动调整比例)”和“Scaled
+Print”，由用户自己定义比例大小。</p>
+<p>Offset：页边偏移</p>
+<p>设置水平页边距和垂直页边距。</p>
+<p>Color Set：颜色设置栏</p>
+<p>可设置：单色，彩色和灰色</p>
+<p>点击“Preview”：可以预览打印效果。</p>
+<p>点击“Printer Setup”：可以进行打印机设置</p>
+<p>之后可以点击“Print”进行打印。</p>
+<h3 id="_40">网络表</h3>
+<p>Altium
+Designer的集成环境中，由原理图可以直接转换到PCB设计或仿真环境。但生成网络表可以便于交流。</p>
+<p>彼此连接在一起的一组元器件引脚形成一个网络，若干网络组成完整电路。网络表就是对电路或者电路原理图的完整描述。其中包含：原理图中所有元器件的信息(包括元件标号，元件引脚和PCB封装等)和网络连接信息(包括网络名称、网络节点等)。</p>
+<p>网表生成：原理图生成，文本编辑器手动编辑，从已经布线的PCB文件导出。</p>
+<p>两种网络表类型： 基于单个原理图文件的网络表和基于整个项目的网络表。</p>
+<ol>
+<li>
+<p>基于单个原理图文件的网络表</p>
+<p>下面我们以AD自带的实例：“Xilinx Spartan-IIE PQ208
+Rev1.02.PrjPcb”中的的原理图文件“SL_FPGA_Auto_2E.SchDoc”为例介绍基于单个原理图文件的网络表的创建。</p>
+<p>打开目标原理图文件。</p>
+<p>“Design”-“Netlist For Document”-要使用网络表的软件(比如Protel)</p>
+<p><img alt="" src="media/8439e859c8ca3994b2f1837e518f5ff3.png" /></p>
+<p>在项目面板“Generated/Netlist
+Files”中，系统生成了当前原理图的网络表“SL_FPGA_Auto_2E.NET”</p>
+<p><img alt="" src="media/bef57141d6978fe6e1dd46c8556c2972.png" /></p>
+<p>该网络表分为两大部分，一部分是元件信息，一部分是网络信息。</p>
+<p>元件信息用方括号分隔，由元件的标识、封装形式、型号、数值等组成。</p>
+<p>网络信息用圆括号分隔，由网络名称和网络中所有具有电气连接关系的元件引脚组成。</p>
+<p><img alt="" src="media/83c74fa00a337d9a2773ab3b78b7f1af.png" /></p>
+</li>
+<li>
+<p>基于整个项目的网络表</p>
+<p>创建网络表前，对项目进行简单的设置。</p>
+<p>在项目名称处右击，选择“Project Options”,在弹出的对话框处选择“Options”</p>
+<p><img alt="" src="media/117a21242766e7bc79b8e330d329dd81.png" /></p>
+<p>“Output Path(输出路径)”：设置各种报表的输出路径</p>
+<p>“ECO日志路径”：设置ECO Log文件的输出路径。</p>
+<p>“Output Options(输出选项)”：设置网络表的网络表的输出选项。</p>
+<p>“Netlist Options(网络表选项)”：设置创建网络表的条件。</p>
+<p>打开目标项目。</p>
+<p>“Design”-“Netlist For Project”-要使用网络表的软件(比如Protel)</p>
+<p><img alt="" src="media/c20373bf01cb7018e9931a6ab140ac14.png" /></p>
+<p>其他步骤和上一步，但原理图生成网络表一样。</p>
+</li>
+</ol>
+<h3 id="bom">元器件报表（BOM）</h3>
+<p>初级生成元器件报表的方式可以直接使用菜单栏的“Reports”-“Bill of Materials”。</p>
+<p><img alt="" src="media/529058da5815424bbee593dae443c422.png" /></p>
+<p>可以设置导出元件表的格式，使用的模板。</p>
+<p>这个可以参考我的视频：<a href="https://www.bilibili.com/video/BV14r4y1K73B/">https://www.bilibili.com/video/BV14r4y1K73B/</a></p>
+<p>尤其应该学习自己定义模板，按照指定的模板生成BOM。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019-2021 <a href="https://xueyusky/">XueYuSky</a>, Maintained by the <a href="https://aiskylab.com">AISKyLab</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.3981fc68.min.js"></script>
+      
+    
+  </body>
+</html>

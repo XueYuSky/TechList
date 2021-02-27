@@ -1,0 +1,1625 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Project documentation with Markdown.">
+      
+      
+      
+        <meta name="author" content="XueYuSky">
+      
+      
+        <link rel="canonical" href="https://tech.xueyusky.cn/hardware/AltiumDesigner%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/3-AltiumDesignerPCB%E8%AE%BE%E8%AE%A1/">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.2">
+    
+    
+      
+        <title>Altium Designer PCB设计 - 我的技术清单</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#altium-designer-pcb" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://tech.xueyusky.cn" title="我的技术清单" class="md-header__button md-logo" aria-label="我的技术清单">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            我的技术清单
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Altium Designer PCB设计
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/XueYuSky/TechList" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://tech.xueyusky.cn" title="我的技术清单" class="md-nav__button md-logo" aria-label="我的技术清单">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    我的技术清单
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/XueYuSky/TechList" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        标准、规范与规则
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="标准、规范与规则" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          标准、规范与规则
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rules/" class="md-nav__link">
+        目录清单
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        硬件技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="硬件技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          硬件技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        硬件技能框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        模拟电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        数字电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        高速电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        EMC与EMI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        PCB设计
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        嵌入式技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="嵌入式技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          嵌入式技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/" class="md-nav__link">
+        嵌入式技能框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/ToolsAndChains/" class="md-nav__link">
+        ToolsAndChains
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/STM32Basic/" class="md-nav__link">
+        STM32裸机项目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/STM32FreeRTOS/" class="md-nav__link">
+        STM32 FreeRTOS项目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/RT-Thread/" class="md-nav__link">
+        RT-Thread
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        上位机技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="上位机技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          上位机技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/Qt%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program/python%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/CSharp/" class="md-nav__link">
+        C#
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        网站设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网站设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          网站设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webdesign/todo/" class="md-nav__link">
+        前端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webdesign/todo/" class="md-nav__link">
+        后端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        移动端设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="移动端设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          移动端设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile/todo/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile/todo/" class="md-nav__link">
+        iOS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        人工智能技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="人工智能技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          人工智能技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/pythonBasic/pythonBasic01/" class="md-nav__link">
+        Python学习
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        工业设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="工业设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          工业设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../industrialDesign/" class="md-nav__link">
+        目录清单
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#altium-designer-pcb_1" class="md-nav__link">
+    Altium Designer PCB编辑器的功能介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb" class="md-nav__link">
+    PCB编辑器界面简介
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB编辑器界面简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    主菜单栏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主工具栏
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_1" class="md-nav__link">
+    PCB的设计流程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_2" class="md-nav__link">
+    PCB文件的建立
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_3" class="md-nav__link">
+    PCB的物理结构与参数设置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_4" class="md-nav__link">
+    PCB中导入原理图网络表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_5" class="md-nav__link">
+    PCB编辑器的操作
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB编辑器的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    视图的移动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    图纸的缩放
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    整体显示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    元件的布局
+  </a>
+  
+    <nav class="md-nav" aria-label="元件的布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    快速自动布局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    手动布局
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_6" class="md-nav__link">
+    PCB的规则设置
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB的规则设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electrical-rules" class="md-nav__link">
+    “Electrical Rules(电气规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    “Routing(布线规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smt" class="md-nav__link">
+    “SMT(表面贴装规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mask" class="md-nav__link">
+    “Mask(阻焊规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plane" class="md-nav__link">
+    “Plane(内电层规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testpoint" class="md-nav__link">
+    “Testpoint(测试点规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manufacturing" class="md-nav__link">
+    “Manufacturing(生产制造规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-speed" class="md-nav__link">
+    “High Speed(高速信号规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placement" class="md-nav__link">
+    “Placement(放置规则)”类：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-intergrity" class="md-nav__link">
+    “Signal Intergrity(信号完整性规则)”类：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_7" class="md-nav__link">
+    PCB的布线
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB的布线">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    自动布线
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    手动布线
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    添加泪滴与覆铜
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb3d" class="md-nav__link">
+    PCB的3D视图
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb_8" class="md-nav__link">
+    PCB的后期操作
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB的后期操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcbdrc" class="md-nav__link">
+    对完成布线的PCB板进行DRC检查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    生成电路板信息报表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    元器件报表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    项目归档
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="altium-designer-pcb">Altium Designer PCB设计</h1>
+<p>PCB设计是电子产品的设计中不可缺少的重要环节。原理图设计的再完美，如果电路板PCB
+Layout设计不合理,产品的性能将大打折扣，甚至不能正常工作。</p>
+<p>做好PCB Layout的第一步就是要熟练使用PCB设计工具。我的这篇文章首先要分享Altium
+Designer 的PCB设计步骤。</p>
+<h2 id="altium-designer-pcb_1">Altium Designer PCB编辑器的功能介绍</h2>
+<p>AD20的PCB设计能力非常强，能够支持最高复杂的32层的PCB设计。</p>
+<ol>
+<li>
+<p><strong>任意角度布线</strong>：在高密度板上绕开障碍物进行专业操作，并且深入到您的BGA中走线，从而无需额外的信号层。借助智能避障算法，您可以使用切向弧避开障碍物，从而最有效地利用您的电路板空间。</p>
+</li>
+<li>
+<p><strong>走线的平滑处理：</strong>对走线进行编辑以改善信号完整性是很耗费时间的，尤其是当您必须对单个弧线以及蛇形调整线进行编辑的时候。这就是为什么Altium
+    Designer
+    20合并了新的布线优化引擎和高级的推挤功能以帮助加快该过程，从而提高生产率的原因。</p>
+</li>
+<li>
+<p><strong>交互式属性面板：</strong>通过更新的属性面板可以完全清晰地操控设计对象和功能。实时查看相关属性，供应商信息，甚至生命周期信息。</p>
+</li>
+<li>
+<p><strong>基于时间的匹配长度：</strong>高速数字电路取决于准时到达的信号和数据。如果走线调整不当，飞行时间会有所变化，并且数据错误可能会很多。Altium
+    Designer 20计算走线上的传播时间，并为高速数字信号提供同步的飞行时间。</p>
+</li>
+<li>
+<p><strong>爬电距离规则：</strong>当目标信号之间通过非导电表面和电路板边缘区域的爬电距离等于或小于指定的爬电距离时，该设计规则将标记出违规。</p>
+</li>
+<li>
+<p><strong>返回路径检查：</strong>除非提供适当的返回路径，否则高速信号会产生电磁场，这可能导致串扰，数据错误或辐射干扰。正确的返回路径可使噪声电流通过非常低的阻抗返回到地，从而消除了这些问题。Altium
+    Designer 20
+    将监视返回路径并检查所有参考多边形的返回路径完整性，因此您无需手动执行此操作。</p>
+</li>
+<li>
+<p><strong>新的原理图增强：</strong>Altium
+    Designer在其原理图编辑器上进行了改进，引入了新的DirectX引擎，即时编译功能以及更加简化的交互式属性面板。</p>
+</li>
+<li>
+<p><strong>合理的自动布线功能：</strong>在自动布线过程中，AD可以基于计算机中定义的规则，并给予网络形状对电路板进行自动布线。自动布线可以在某个网络、某个特殊区域甚至整个电路板的范围内进行，这些可以大大减轻用户的工作量，提高设计效率。</p>
+</li>
+</ol>
+<h2 id="pcb">PCB编辑器界面简介</h2>
+<p>PCB编辑器主界面分：主菜单栏，主工具栏，主工作面板。</p>
+<p><img alt="" src="media/8a09a0a5bc25a1d3b7bc8463c3fb3682.png" /></p>
+<ol>
+<li></li>
+<li></li>
+</ol>
+<h3 id="_1">主菜单栏</h3>
+<p>PCB设计过程中的操作都可以通过主菜单中对应的菜单命令完成。主要菜单命令大类如下：</p>
+<p><img alt="" src="media/283417c5a40bd2fdfa16a2111b7909c1.png" /></p>
+<p>“File(文件)”：所有文件操作-新建，打开，导入，导出，关闭等操作。</p>
+<p>“Edit(编辑)”：对象选择，复制，粘贴，查找与编辑等操作。</p>
+<p>“View(查看)”：视图操作的管理与切换等</p>
+<p>“Project(项目)”：项目的相关操作。</p>
+<p>“Place(放置)”：放置PCB Layout过程中的对象等。</p>
+<p>“Design(设计)”：PCB
+Layout过程中的规则建立，交换操作，板型定义，元件库生成等操作。</p>
+<p>“Tools(工具)”：设计过程中的各种工具。</p>
+<p>“Route(布线)”：各种布线操作命令。</p>
+<p>“Reports(报告)”：生成报告相关的命令。</p>
+<p>“Window(窗口)”：窗口操作命令。</p>
+<p>“Help(帮助)”：帮助菜单命令。</p>
+<h3 id="_2">主工具栏</h3>
+<p>PCB设计工作面板中，有一个常用工具的工具栏，如下：</p>
+<p><img alt="" src="media/6267caa83fd4075d4946fadfe86c793c.png" /></p>
+<p>这常用的14个分类的工具主要功能：</p>
+<ol>
+<li>
+<p>选择过滤器</p>
+</li>
+<li>
+<p>Objects for snapping</p>
+</li>
+<li>
+<p>Move Object</p>
+</li>
+<li>
+<p>选择重叠对象的操作</p>
+</li>
+<li>
+<p>对其操作</p>
+</li>
+<li>
+<p>放置器件及3D操作</p>
+</li>
+<li>
+<p>交互式布线</p>
+</li>
+<li>
+<p>交互式线长调整</p>
+</li>
+<li>
+<p>过孔和焊盘放置</p>
+</li>
+<li>
+<p>放置多边形</p>
+</li>
+<li>
+<p>放置Keepout(线，框，块等)</p>
+</li>
+<li>
+<p>测量工具</p>
+</li>
+<li>
+<p>文本工具</p>
+</li>
+<li>
+<p>绘图工具</p>
+</li>
+</ol>
+<h2 id="pcb_1">PCB的设计流程</h2>
+<p>PCB设计遵循一定的设计流程，能够降低设计过程中出错的概率。下面是我总结的一种设计流程：</p>
+<p><img alt="" src="media/a3fe60504a93cfaef1209f52e5d50fad.png" /></p>
+<p>项目准备：应准备好PCB项目和已经完成的原理图图纸。</p>
+<p>资料准备：编译通过的项目，封装库，结构图(摆放位置及Dxf文件)，设计说明(关键信号处理及制板工艺说明)，重要器件数据手册(推荐布局布线等参考)。</p>
+<h2 id="pcb_2">PCB文件的建立</h2>
+<p>在打开的项目中，通过“File”-“New”-“PCB”来创建PCB文件。</p>
+<p>然后保存PCB文件为需要的名字。</p>
+<h2 id="pcb_3">PCB的物理结构与参数设置</h2>
+<p>大多数厂家默认使用Mechanical 1
+作为电路板的物理边界即板子的边框层。以前很多人使用Keepout层做边框，但这种方式不太标准，不太推荐这种方式。</p>
+<p>这个边框层我们可以手动在PCB编辑器环境中利用绘图工具绘制，但更多情况下由结构工程师导出的结构设计图纸(.dxf)文件导入，然后选中边框，使用“Design”-“Board
+Shape”-“Define from selected objects”。(快捷键英文输入法： D + S + D)。</p>
+<p>其他功能暂时不介绍。</p>
+<p><img alt="" src="media/0714a7f7e02b15d25f15bf774325184d.png" /></p>
+<p>定义完成后：</p>
+<p><img alt="" src="media/7c7051fd5bb98d7b4de13e5e57c889b1.png" /></p>
+<p>在PCB界面，按键盘上的“L”键，弹出PCB层叠功能设置。“View Configuration”</p>
+<p>在“Layer\&amp;Colors”可以设置每层使用的颜色。</p>
+<p><img alt="" src="media/63dff5536992bf7a8b93148fa44ae6eb.png" /></p>
+<p>分层的类别说明：</p>
+<ol>
+<li>
+<p>Signal Layers(信号层)：实际要使用的铜箔布线层</p>
+</li>
+<li>
+<p>Internal
+    Planes(内部电源层或者地平面层)：这部分也属于铜箔层，主要用于建立电源和地网络。</p>
+</li>
+<li>
+<p>Mechanical
+    Layers(机械层)：用于描述机械结构、标注及加工等说明的参数都放在这层。不能完成电气连接特性。</p>
+</li>
+<li>
+<p>Mask
+    Layers(阻焊层)：这部分主要用于保护铜线，也可以防止器件被焊到不正确的地方。这里有</p>
+</li>
+<li>
+<p>Silkscreen Layers(丝印层)：</p>
+</li>
+<li>
+<p>Other Layers(其它层)：</p>
+</li>
+</ol>
+<p>“View Options”可以设置PCB的可视化参数属性。(如透明度等)。</p>
+<p><img alt="" src="media/28443179f009584c65f91a06ff16ff2a.png" /></p>
+<p>在PCB界面，进行PCB层叠参数设置时，使用命令：“Design”-“Layer Stack
+Manager”，弹出Stackup。设置层叠，阻抗，过孔属性。</p>
+<p><img alt="" src="media/da3eeda443b52524007948191ede9204.png" /></p>
+<p>如果想要设计柔性板或者刚柔结合电路板，需要在这里设置。之后会有具体的项目讲解。</p>
+<h2 id="pcb_4">PCB中导入原理图网络表</h2>
+<p>以一个项目：STM32F103CxT6-V1I0.PrjPcd为例。</p>
+<p>在原理图设计完成的情况下，要进行PCB
+Layout导入网表前，应该将原理图中所用到的所有元件库进行装载。</p>
+<p>可以在“Tools” – “Foot Print Manager”中，查看和修改元器件选用的封装。</p>
+<p><img alt="" src="media/2a3a32fb746948c664859902117ccf37.png" /></p>
+<p>当封装选择完成后，在“Design”-“Update Schematics in xxxx.PrjPcb”。</p>
+<p><img alt="" src="media/a13ab59a50b40017389ebfe1a9bb7126.png" /></p>
+<p>弹出对话框：点击“Validate
+Changes”可以验证，Check栏会显示状态。如图中，有红色叉的后面提示封装没有找到，这时候需要检查是否添加了正确的封装。</p>
+<p>全部添加后，点击“Execute Changes”会有在Done栏会显示状态。</p>
+<p><img alt="" src="media/62964c89f6b5ffa5374e5fdcd050bade.png" /></p>
+<p>全部验证完成并正确后，PCB文档中会导入元器件：</p>
+<p><img alt="" src="media/151a6b7797e1a1e0aa6ee8eaf3b9430d.png" /></p>
+<h2 id="pcb_5">PCB编辑器的操作</h2>
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<h3 id="_3">视图的移动</h3>
+<ol>
+<li>
+<p>类似原理图试图移动方式，右击鼠标键，按下至出现小手符号，就可以任意拖动视图。</p>
+</li>
+<li>
+<p>鼠标滚轮上下滚动可以将视图上下移动；按住Shift，上下滚动鼠标滚轮，视图将左右移动。</p>
+</li>
+</ol>
+<h3 id="_4">图纸的缩放</h3>
+<ol>
+<li>
+<p>类似原理图中，使用“Page Up”和“Page Down”放大和缩小</p>
+</li>
+<li>
+<p>使用菜单中的“View”-“Zoom In”和“Zoom Out”</p>
+</li>
+<li>
+<p>按住“Ctrl”+ 鼠标滚轮上下滚动</p>
+</li>
+<li>
+<p>安装鼠标中间的滚轮，前后拖动可以放大和缩小</p>
+</li>
+</ol>
+<h3 id="_5">整体显示</h3>
+<p>使用快捷键：V + F（适合文档） / V + D（整个文档） / V + A(区域)</p>
+<h2 id="_6">元件的布局</h2>
+<ol>
+<li></li>
+</ol>
+<h3 id="_7">快速自动布局</h3>
+<p>AD提供了很方便的交互式布局与布线的功能，在我们设计原理图时，最好就开始构思PCB的布局。这样，我们在进行PCB布局时，可以利用原理图与PCB的“Tools”-“Cross
+Select Mode”，从大量元器件中快速选出相关联的或者需要几种摆放的元器件。</p>
+<ol>
+<li>
+<p>选中目标器件</p>
+<p>在原理图中快速选择元器件，我们可以使用“Property ”面板的“Selection
+Filter”或工具栏快速筛选过滤器，只选择： Components</p>
+<p><img alt="" src="media/fc2d947790f26bb15ceb025bdb070c74.png" /></p>
+<p>在原理图中，单击鼠标左键不放，选中要布局或者筛选的元件区域，可以只选择该区域的元器件。此时打开PCB编辑器，对应的元器件也自动被选中。</p>
+<p><img alt="" src="media/3423e5179206d7966c07a7638594a6a7.png" /></p>
+</li>
+<li>
+<p>自动布局</p>
+<p>然后，在PCB编辑器内，选择“Tools”-“Component Placement”-“Arrange Within
+Rectangle”。</p>
+<p><img alt="" src="media/56a8df3e8d51c350c14275206025760d.png" /></p>
+<p>鼠标光标变成十字，选择一个要放置元件的区域，绘制一个方框，会发现刚刚选中的元件都被自动放置到了刚绘制的方框中。</p>
+</li>
+</ol>
+<p><img alt="" src="media/bc5924639109d8d86380c088fe999a58.png" /></p>
+<p>这样我们可以将一张原理图中的元件快速筛选出来并进行初步布局。</p>
+<p>当时用层次化原理图时，默认会为每张原理图生成一个Room,同一张原理中的元件会在同一个Room中。这时候，我们可以直接在PCB编辑器中，使用：“Tools”-““Component
+Placement”-“Arrange Within Room”，光标变成十字单击对应的Room。</p>
+<p><img alt="" src="media/2a1eaa72acba4c7404835bf4077a4535.png" /></p>
+<p>软件会对这个Room中的元件进行快速自动布局。</p>
+<p><img alt="" src="media/a0c5e5260b0eb8c683d52e2923c76ecc.png" /></p>
+<p>通过这两部操作后，我们可以将复杂的电路元件，在PCB编辑器中快速的分区放置。以加快后期手动布局。</p>
+<h3 id="_8">手动布局</h3>
+<p>在进行完快速自动布局后，我们需要对布局进行手动优化，细化调整各类元件的位置和方向等。</p>
+<ol>
+<li>
+<p>元器件的对齐</p>
+<p>在选中几个需要对齐放置的元件时，使用对齐命令或者工具，可以很方便的将PCB布局优化的更加“整齐”、“对称”和“美观”，也会方便后期进行布线操作，提高板子的布通率。</p>
+<p>在选中的元器件上，右击，选择“Align”-对应的对齐命令。</p>
+<p><img alt="" src="media/ace38e3d566c76d73481b6e0aa413dc2.png" /></p>
+<p>也可以右击击工具栏的对齐工具，选择合适的命令执行。</p>
+</li>
+<li>
+<p>元器件丝印文字位置</p>
+<p>当我们完成布局后，通常需要调整丝印文字的位置。我们可以使用对齐命令中的“Position
+Component Text”完成。</p>
+<p><img alt="" src="media/aa5a46690d626936b9f33744a0d9a89f.png" /></p>
+<p>首先选中所有的要进行调整的文字，可以选中一个，然后右击使用“Find Similar
+Objects”快速选出具有相同属性的对象（在这里选中的是Designator）。</p>
+<p>然后，选择“Align”-“Position Component Text”。弹出设置对话框。</p>
+<p><img alt="" src="media/15235caf4d804023caa2d4812fd883ae.png" /></p>
+<p>可以设置“Designator”和“Comment”的位置。</p>
+</li>
+<li>
+<p>元器件间距调整</p>
+<p>元器件间距的调整主要包括：水平方向和垂直方向的调整。</p>
+<p>这些命令也在“Align”中，主要包括：</p>
+<p><img alt="" src="media/c694c9fb3831ba749100c63316a7c458.png" /></p>
+<p>“Align Horizontal Centers”:水平中心对称分布</p>
+<p>“Distribute Horizontally”: 水平分布</p>
+<p>“Increase Horizontal Spacing”:增加水平间距。</p>
+<p>“Decrease Horizontal Spacing”: 增加水平间距。</p>
+<p>“Align Vertical Centers”: 垂直中心对称分布</p>
+<p>“Distribute Vertically”: 垂直分布</p>
+<p>“Increase Vertical Spacing”:增加垂直间距。</p>
+<p>“Decrease Vertical Spacing”: 增加垂直间距。</p>
+</li>
+<li>
+<p>移动元器件到格点处</p>
+<p>“Align”中的命令——</p>
+<p>“Align To Grid”:对齐到格点</p>
+<p>“Move All Components Origin To Grid ”:移动所有元器件到栅格点。</p>
+</li>
+</ol>
+<h2 id="pcb_6">PCB的规则设置</h2>
+<p>规则设置可以说是PCB设计过程中非常重要的一步，如果我们在设计之初就对规则进行了合理的设置，那它将非常有利于提高后期自动布线的效率和效果。</p>
+<p>以AISkyLab-STM32F103CxT6.PrjPcb为例。在完成布局的PCB编辑器内，执行：“Design”-“Rules”,打开规则设置对话框。</p>
+<p><img alt="" src="media/9bcbc0be0d19be90f19b70330f883c14.png" /></p>
+<p>其中红线框内的为我们通常需要设置的一部分规则。这些规则如果设置不合适，在完成布线进行DRC检查时，通常会出现一堆错误，让新手不知所措。</p>
+<p>这部分参数的设置，通常需要我们结合实际加工厂的制造工艺进行设置。比如下面总结了常用的几家厂家加工工艺说明：</p>
+<ol>
+<li>
+<p>嘉立创工艺： <a href="https://www.jlc.com/portal/vtechnology.html">https://www.jlc.com/portal/vtechnology.html</a></p>
+</li>
+<li>
+<p>华秋PCB工艺： <a href="https://www.hqpcb.com/ability.html">https://www.hqpcb.com/ability.html</a></p>
+</li>
+<li>
+<p>捷多邦工艺： <a href="https://www.jdbpcb.com/processshow/">https://www.jdbpcb.com/processshow/</a></p>
+</li>
+</ol>
+<p>规则分类共有10个大类，在左侧的列表中，我们可以看到。</p>
+<ol>
+<li></li>
+</ol>
+<h3 id="electrical-rules">“Electrical Rules(电气规则)”类：</h3>
+<p>这类规则主要针对具有电气特性的对象，用于系统的DRC（电气规则检查）功能。</p>
+<p><img alt="" src="media/a4c2ec3bbd1ee40da307e27a0f2956df.png" /></p>
+<ol>
+<li>
+<p>“Clearance”-安全间距规则：</p>
+<p><img alt="" src="media/a903f5133099251d66a32da23b94102a.png" /></p>
+<p>这里可以设置导线，焊盘，过孔，铜箔等对象之间的间距。</p>
+<p>需要注意的是，我们可以为不同的对象设置不同的规则，这样就可以添加多条间距规则。</p>
+<p>在“Where the First objects matches”和“Where the Second objects
+matches”处设置规则适配的对象，在Constraints处设置规则的参数。</p>
+</li>
+<li>
+<p>“Short-Circuit”-短路规则：</p>
+<p>用于设置电路板上是否可以出现短路。通常我们使用默认的不允许即可。</p>
+</li>
+<li>
+<p>“Un-Routed Net”-不进行布线的规则：</p>
+<p>设置电路板上是否可以出现未连接的网络。通常设置不允许。但某些特殊的设置，不如使用
+外接的短路线或者跳线时可以允许，但最好设置针对的具体对象。</p>
+</li>
+<li>
+<p>“Un-Connected Pin”-未连接引脚的规则：</p>
+<p>当存在未布线的引脚时，会触发该规则的警告或报错。</p>
+</li>
+<li>
+<p>“Modified Polygon”-编辑的多边形区域：</p>
+<p>对编辑后的多边形覆铜区域的规则。</p>
+</li>
+<li>
+<p>“Creepage Distance”-爬电距离规则：</p>
+<p>设置爬电距离的参数规则。</p>
+</li>
+</ol>
+<h3 id="routing">“Routing(布线规则)”类：</h3>
+<p>这些规则主要用于设置布线过程中的布线规则，如布线宽度，布线优先级，布线拓扑结构等8种布线规则。</p>
+<p><img alt="" src="media/180c95c2052b31a7fa960b80a6f0ee45.png" /></p>
+<ol>
+<li>
+<p>“Width(走线宽度规则)”：</p>
+</li>
+<li>
+<p>“Routing Topolgy(走线拓扑规则)”：</p>
+</li>
+<li>
+<p>“Routing Priority(布线优先级设置)”：</p>
+</li>
+<li>
+<p>“Routing Layers(布线层设置)”：</p>
+</li>
+<li>
+<p>“Routing Corners(布线拐角规则)”：</p>
+</li>
+<li>
+<p>“Routing Via Style(过孔样式规则)”：</p>
+</li>
+<li>
+<p>“Fantout Control(扇出规则)”：</p>
+</li>
+<li>
+<p>“Differential Pairs Routing(差分布线规则)”：</p>
+</li>
+</ol>
+<h3 id="smt">“SMT(表面贴装规则)”类：</h3>
+<p>主要用于设置表面贴装元器件的走线规则。主要包括：</p>
+<ol>
+<li>
+<p>“SMD To Corner”(SMD焊盘与导线拐角最小间距规则):</p>
+</li>
+<li>
+<p>“SMD To Plane”(SMD焊盘与中间层间距规则):</p>
+</li>
+<li>
+<p>“SMD Neck-Down”(SMD焊盘颈缩率规则):</p>
+</li>
+<li>
+<p>“SMD Entry”(SMD焊盘连接进入方向规则):</p>
+</li>
+</ol>
+<h3 id="mask">“Mask(阻焊规则)”类：</h3>
+<p>主要用于阻焊层铺设的尺寸规则，主要用于Output
+Gerneration(输出阶段)。系统提供了“Top Paste”(顶层锡膏保护层)、“Bottom
+Paste”(顶层锡膏保护层)、”Top Solder”(顶层阻焊层)、”Bottom Solder”(底层阻焊层)</p>
+<ol>
+<li>
+<p>Solder Mask Expansion</p>
+<p><img alt="" src="media/ce740ad98457ab38f9271855c57b16a5.png" /></p>
+</li>
+<li>
+<p>Paste Mask Expansion</p>
+</li>
+</ol>
+<p><img alt="" src="media/da315ef26a22eefc4fade36d12009c75.png" /></p>
+<h3 id="plane">“Plane(内电层规则)”类：</h3>
+<p>主要用于设置中间电源层的走线与连接规则。</p>
+<p><img alt="" src="media/82d3597d5bfae9e3a5f394157d9ac75d.png" /></p>
+<p>“Power Plane Connect Style(电源层连接规则)”：</p>
+<p>“Power Plane Clearance（电源层安全间距规则）”：</p>
+<p>“Polygon Connect Style(焊盘与多边形覆铜区域的连接方式规则)”：</p>
+<h3 id="testpoint">“Testpoint(测试点规则)”类：</h3>
+<p>主要用于设置测试点布线规则，主要包括装配测试点和装配测试点使用规则。</p>
+<p><img alt="" src="media/fe1d3e67807c177dc448befa66bb35ed.png" /></p>
+<h3 id="manufacturing">“Manufacturing(生产制造规则)”类：</h3>
+<p>这里的规则需要根据PCB制作工艺来设置有关参数。主要用在在线DRC和批处理DRC执行过程中。主要有9种。</p>
+<p><img alt="" src="media/03b9b08e38ed6272dbbe72d1546dc4fe.png" /></p>
+<p>Minimum Annular Ring(最小环孔限制):</p>
+<p>Acute Angle(锐角限制规则)：</p>
+<p>Hole Size(钻孔尺寸规则)：</p>
+<p>Layer Pairs(工作层对规则)：</p>
+<p>Hole To Hole Clearance(钻孔间距规则)：</p>
+<p>Minimum Solder Mask Sliver（最小阻焊条规则）：</p>
+<p>Silk To Solder Mask Clearance(丝印与阻焊层间距规则)：</p>
+<p>Silk To Silk Clearance(丝印间距规则)</p>
+<p>Net Antennae(天线规则)：</p>
+<p>Board Outline Clearance(电路板轮廓间隙)</p>
+<h3 id="high-speed">“High Speed(高速信号规则)”类：</h3>
+<p>该类规则主要用于设置高速信号布线规则，主要由6大类。</p>
+<p><img alt="" src="media/82076d17b3fc9c40a3d0d7fd2f5f19a7.png" /></p>
+<p>该部分内容将在后面结合高速布线的实例项目进行介绍。</p>
+<h3 id="placement">“Placement(放置规则)”类：</h3>
+<p>这部分规则主要用于设置元器件布局规则。一般只用在对元器件布局有严格要求的场合中使用。</p>
+<p><img alt="" src="media/0272a6d2ac0be005c8ce3fe5ea3ee306.png" /></p>
+<h3 id="signal-intergrity">“Signal Intergrity(信号完整性规则)”类：</h3>
+<p>这部分规则主要用于设置信号完整性要求的规则，比如：信号上升沿，信号下降沿，信号过冲约束等等。默认没有规则，需要根据项目要求手动创建。</p>
+<p><img alt="" src="media/32781c39c570625c406613de9661a28e.png" /></p>
+<h2 id="pcb_7">PCB的布线</h2>
+<p>布局和规则设置完成后，就可以进行PCB的布线了。我们可以借助软件的自动布线功能对要求不高的部分进行自动布线。对关键信号和重要信号以及其他特殊的走线进行手动布线。</p>
+<ol>
+<li></li>
+</ol>
+<h3 id="_9">自动布线</h3>
+<p>设置自动布线的策略，“Route”-“Setup”。</p>
+<p><img alt="" src="media/6cb31443f012bdc0950ecbe7044f765e.png" /></p>
+<p>弹出策略设置对话框：</p>
+<p><img alt="" src="media/fbd4545326581527ab3c4f65b91a3e59.png" /></p>
+<p>在“Routing
+Strategies”中设置已有的或者添加新的自动布线策略。默认有5种布线策略可以选择。</p>
+<p>点击“Add”可以添加自己定义的布线策略。如下图：</p>
+<p><img alt="" src="media/9f8325f8fd93f22c7b7050459ed557a4.png" /></p>
+<p>布线策略这只完成，就可以根据需要，进行自动布线。比如：全局自动布线，对指定网络进行，对网络类进行，对区域进行，对空间（Room）进行，对某个元件进行，对器件类进行，对选中的对象进行，选中对象之间的连接进行等。这些都依赖与良好的规则和布局。</p>
+<p>比如本例，执行All后，软件会进行自动布线，并在“Message”中显示布线提示：</p>
+<p><img alt="" src="media/a9684e5249af577fe66236e979d90891.png" /></p>
+<h3 id="_10">手动布线</h3>
+<p>经过初步自动布线的电路，我们需要根据项目的特殊性，对电路板进行手动布局的优化。</p>
+<p>手动布线需要多加练习和总结技巧，经常总结布线技巧，积累经验，能够在以后的项目中不断提高自己的布线水平。</p>
+<ol>
+<li>
+<p>删除部分不够理想的布线。</p>
+<p>可以执行： “Route”-“Un-Route”-对应的取消布线的命令。</p>
+</li>
+<li>
+<p>手动布线：</p>
+<ol>
+<li>
+<p>放置交互式布线，光标变成十字形。（或者直接Ctrl + W）</p>
+</li>
+<li>
+<p>移动光标到焊盘上，单击放置起点。多次单击放置不同的控制点，可以设置走线的方向。</p>
+<p>方向主要有：
+任意角度走线，90°拐角走线，90°圆弧角走线，45°拐角走线，45°圆弧角走线。</p>
+<p>按Tab可以在属性面板进行设置：</p>
+<p><img alt="" src="media/8a612893f1149b3970fb331254932ec2.png" /></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="_11">添加泪滴与覆铜</h2>
+<p>完成所有布线后，应进行泪滴添加和覆铜处理。</p>
+<p><img alt="" src="media/e1a69e4d11a285a5a95ac575c8976591.png" /></p>
+<p>泪滴的添加：</p>
+<p>“Tools”-“Teardrops”,弹出泪滴参数设置对话框：</p>
+<p><img alt="" src="media/4a25beae9b6efb3a7f3fadd0ffbc6f4f.png" /></p>
+<p>点击“OK”，既可以执行添加泪滴。</p>
+<p>泪滴添加完成后再进行覆铜处理。右击鼠标，“Place”-“Polygon Pour...”（快捷键P+G）</p>
+<p>在需要的位置绘制多边形覆铜。</p>
+<p>注意设置覆铜的属性：</p>
+<p><img alt="" src="media/3b8ad76dfa28f8be5547cd882023cf41.png" /></p>
+<p>在“Properties”中，应添加覆铜所属于的Net。</p>
+<p>填充模式有三个按钮：
+Solid(实体填充)、Hatched（网状填充）、None（外边框，内部中空）。</p>
+<p>还要注意其中一个下拉列表中有：</p>
+<p><img alt="" src="media/11cf382b54b3837edf0af6aaf9a3a2ba.png" /></p>
+<p>我通常选择第二项：“Pour Over All Same Net Objects”。</p>
+<p>而且，需要勾选去除死铜选项（Remove Dead Copper）。</p>
+<h2 id="pcb3d">PCB的3D视图</h2>
+<p>我们设计PCB，进行布线时是在2维视图下操作的。但我们在设计过程中，可以随时切换到3D视图界面，查看电路板的3D仿真设计情况。只需要按键盘上的数字键3即可。（或者在菜单栏“View”-2D
+Layout Mode/3D Layout Mode之间切换）</p>
+<p><img alt="" src="media/9004aff94c7f002df9800e9e986ade21.png" /></p>
+<p>如果要切换回2维视图，只需要按数字键2即可切换回2维布线编辑器。</p>
+<h2 id="pcb_8">PCB的后期操作</h2>
+<p>PCB Layout布线工作完成后，后期主要进行检查，进行批处理DRC，生成报表。</p>
+<ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<h3 id="pcbdrc">对完成布线的PCB板进行DRC检查</h3>
+<p>在PCB编辑器内，“Tools”-“Design Rules
+Check”,弹出对话框，默认会按照之前的设置规则进行检查。</p>
+<p><img alt="" src="media/8cbc5b606dfec7396f75bdb41477fd9b.png" /></p>
+<p>点击左下角，“Run Design Rule Check”，会生成Design Rule Verification
+Report，如果有错误或者警告也会在Message面板显示。如果没有错误，Message面板则没有条目。</p>
+<p><img alt="" src="media/fc54062303060ecc74d1bebe573c840f.png" /></p>
+<h3 id="_12">生成电路板信息报表</h3>
+<p>在菜单栏“Reports”-“Board Infomation”,弹出设置对话框：</p>
+<p><img alt="" src="media/8db3c979ff1053076b03e30bc0d080ae.png" /></p>
+<p>选择需要的信息，点击打勾，点击Report就可以生成报告了。</p>
+<p><img alt="" src="media/adb528add1666a53a44892418635dc77.png" /></p>
+<p>也可以选择在PCB编辑器查看“Property”属性，其中有“Board Information”相关的信息。</p>
+<p><img alt="" src="media/d07635d4924295c0923ccc8cb415888d.png" /></p>
+<h3 id="_13">元器件报表</h3>
+<p>元器件报表是项目中使用的元器件信息的汇总表。</p>
+<p>可以参考我的视频：《AD20自定义BOM模板一键生成BOM</p>
+<p>》</p>
+<p>配置能够自定义参数的元器件清单：</p>
+<p><img alt="" src="media/11ba83f3aa4d08a41155c494a6303fa9.png" /></p>
+<h3 id="_14">项目归档</h3>
+<p>项目归档时，按照步骤和文件类型。我个人总结了7个步骤：</p>
+<p>S101-Gerber文件(包括钻孔文件)</p>
+<p>S201-坐标文件</p>
+<p>S202-物料清单</p>
+<p>S301-固件</p>
+<p>S401-3D文件</p>
+<p>S501-原理图PDF文件</p>
+<p>S601-源文件</p>
+<p>所以，上述归档资料中，除了S301步骤的固件不在Altium
+Designer中生成，其它都由Altium Designer批处理“Output Job File”生成。</p>
+<p>“File”-“New”-“Output Job File”：</p>
+<p><img alt="" src="media/fea1bcc6dad7fcac5cf2333f4e87e0c9.png" /></p>
+<p>在这个文件中可以配置批处理脚本。主要类别有：</p>
+<p>Netlist Outputs：网络表输出</p>
+<p>Simulator Outputs:仿真输出</p>
+<p>Documentation Outputs:文档类输出</p>
+<p>Assembly Outputs:装配文件输出</p>
+<p>Fabrication Outputs:加工文件输出</p>
+<p>Report Outputs:报告文件输出</p>
+<p>Validation Outputs:验证类文件输出</p>
+<p>Export Outputs:导出第三方类文件输出</p>
+<p>PostProcess Outputs:拷贝文件</p>
+<p>这个文件非常好用，可以将所有批处理放在一个文件中，逐个执行。</p>
+<p>也可以将每类输出单独放到一个输出配置文件中，按类执行。</p>
+<p>而且这些文件一旦设置好后，可以直接复制到其他项目，添加到项目中略作修改就可以使用，非常方便。</p>
+<p>这部分内容将在后期以单独一期视频的形式进行分享。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019-2021 <a href="https://xueyusky/">XueYuSky</a>, Maintained by the <a href="https://aiskylab.com">AISKyLab</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.3981fc68.min.js"></script>
+      
+    
+  </body>
+</html>

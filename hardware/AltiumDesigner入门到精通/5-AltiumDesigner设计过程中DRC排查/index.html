@@ -1,0 +1,890 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Project documentation with Markdown.">
+      
+      
+      
+        <meta name="author" content="XueYuSky">
+      
+      
+        <link rel="canonical" href="https://tech.xueyusky.cn/hardware/AltiumDesigner%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/5-AltiumDesigner%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B%E4%B8%ADDRC%E6%8E%92%E6%9F%A5/">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.2">
+    
+    
+      
+        <title>5 AltiumDesigner设计过程中DRC排查 - 我的技术清单</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#drc" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://tech.xueyusky.cn" title="我的技术清单" class="md-header__button md-logo" aria-label="我的技术清单">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            我的技术清单
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5 AltiumDesigner设计过程中DRC排查
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/XueYuSky/TechList" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://tech.xueyusky.cn" title="我的技术清单" class="md-nav__button md-logo" aria-label="我的技术清单">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    我的技术清单
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/XueYuSky/TechList" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        标准、规范与规则
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="标准、规范与规则" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          标准、规范与规则
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rules/" class="md-nav__link">
+        目录清单
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        硬件技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="硬件技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          硬件技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        硬件技能框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        模拟电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        数字电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        高速电路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/" class="md-nav__link">
+        EMC与EMI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        PCB设计
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        嵌入式技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="嵌入式技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          嵌入式技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/" class="md-nav__link">
+        嵌入式技能框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/ToolsAndChains/" class="md-nav__link">
+        ToolsAndChains
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/STM32Basic/" class="md-nav__link">
+        STM32裸机项目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/STM32FreeRTOS/" class="md-nav__link">
+        STM32 FreeRTOS项目
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../embdesign/RT-Thread/" class="md-nav__link">
+        RT-Thread
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        上位机技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="上位机技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          上位机技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/Qt%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program/python%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/CSharp/" class="md-nav__link">
+        C#
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        网站设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网站设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          网站设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webdesign/todo/" class="md-nav__link">
+        前端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webdesign/todo/" class="md-nav__link">
+        后端
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        移动端设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="移动端设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          移动端设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile/todo/" class="md-nav__link">
+        Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile/todo/" class="md-nav__link">
+        iOS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        人工智能技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="人工智能技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          人工智能技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/pythonBasic/pythonBasic01/" class="md-nav__link">
+        Python学习
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        工业设计技能清单
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="工业设计技能清单" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          工业设计技能清单
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../industrialDesign/" class="md-nav__link">
+        目录清单
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <p>Altium Designer设计过程中DRC排查</p>
+<p>使用AD进行电路设计，DRC检查需要注意。某些细节设置不正确时，我们会遇到各种警告语报错。</p>
+<p>主要分为原理图设计过程中的DRC和PCB设计过程中的DRC排查。</p>
+<p>下面以一个层次化原理图设计过程中遇到的报错为例，介绍报错排除过程。</p>
+<p>项目名称： CT107D-V20.PrjPcb</p>
+<p><img alt="" src="media/53260091d4c0edd3b84e166cbd8b97e1.png" /></p>
+<p>打开后在项目名称处右击，“Validate PCB Project
+xxx”(如果你用的是AD16之前的版本，这里是“Compile PCB ……”)</p>
+<p>弹出Message对话框，里面有很多错误和警告：</p>
+<p><img alt="" src="media/29bdbfe3dcccd328717a8972d172b32d.png" /></p>
+<p>可以看到错误类型只有一种：“Duplicate Net Names Wire xxx”。</p>
+<p>警告类型非常多，我们先解决报错。很多时候，错误类型解决后，警告就不存在了。之后再检查警告中比较关键的几个。</p>
+<ol>
+<li>
+<p>“Off grid xx at xx mm,yy mm”</p>
+</li>
+<li>
+<p>“Footprint of component Component U18 74HC04 cannot be found”</p>
+</li>
+</ol>
+<h1 id="drc">原理图设计过程中的DRC检查</h1>
+<p>这个实例中，我们看到的错误是“Duplicate Net Names Wire xxx”。</p>
+<p>首先，在“Message”中，对应的错误信息双击，原理图会自动跳到对应的出错位置。</p>
+<p><img alt="" src="media/2b07c57f5618d0cd935801422076d539.png" /></p>
+<p>可以看到： 原理图调到了OUTSIDE.SchDoc文档。</p>
+<p>Netlabel型的名字有两个 P01, 同时，与P01连接的一个端口类型（Port）也是P01。</p>
+<p>但实际报错指示的原理图是顶层原理图： CT107D-V20.SchDoc</p>
+<p><img alt="" src="media/53260091d4c0edd3b84e166cbd8b97e1.png" /></p>
+<p>这中错误原因一般是因为对项目选项中这两种符号的使用范围设置不正确，没有按照统一固定标准。</p>
+<p>一般我们可以默认：</p>
+<p><strong>Net Identifier Scope的下拉列表设置成了上表中的“Automatic（based on project
+contents）”</strong></p>
+<p>如果同时使用端口和网络标签类型：</p>
+<p>NetLabel类型的网络标签只在同一张原理图内使用，相同的名称的放置点会在生成网表或PCB中连接在一起。</p>
+<p>Port端口类型的用于多张原理图之间共同连接点的连接。</p>
+<p>以上描述的适配需要在项目名称处右击：选择“Project Options”</p>
+<p><img alt="" src="media/d28bf7c6e0051744128111a6414dded1.png" /></p>
+<p>弹出对话框中，查看到这个项目的“Options”选项：</p>
+<p><img alt="" src="media/7f31a0a8418f43e455bc48b2887749b4.png" /></p>
+<p><strong>其中，如果Net Identifier Scope的下拉列表设置成了上表中的“Global（Netlabels and
+ports global）”</strong></p>
+<p>就不遵循之前默认的规则，会将项目中所有的网络标签和端口都按全局对象处理。</p>
+<p>这时候两张原理图中，都有P00-P11的端口。而且这些网络标签又连到了同名的端口上，就会出现重复标号的问题。</p>
+<p>解决办法1：</p>
+<p>仍然使用<strong>“Global（Netlabels and ports global）”:</strong></p>
+<p><strong>将两张子原理图中任意一张，与Port相连的重复的P00-P11,Y5C名字成别的，比如：
+Net00-Net11，NetY5C</strong></p>
+<p><strong>这里我更改的是OUTSIDE.SchDoc：</strong></p>
+<p><strong><img alt="" src="media/12592354fd1215e0373ffecd9f985388.png" /></strong></p>
+<p><strong>更改之后重新验证：</strong></p>
+<p><strong>Message提示：</strong></p>
+<p><strong><img alt="" src="media/8a500f30f2d5c1f1475dfbdefc6b288a.png" /></strong></p>
+<p><strong>这个地方比较奇怪，只有一个P02报错。</strong></p>
+<p><strong>其它的都解决了。双击报错的信息。软件自动打开报错的原理图。</strong></p>
+<p><strong><img alt="" src="media/6e9ef3bf8380f8595120a2a2385b5226.png" /></strong></p>
+<p><strong>这些地方是有P02网络标签的地方。看不出错误，怀疑是连接时，格点设置不合适，导致看起来标签和线连接了，实际没有连接。</strong></p>
+<p><strong>把这些标签和对应的线删除，重新验证，这个错误消失。</strong></p>
+<p><strong>重新设置格点：2.54mm(100mil),重新将刚刚删除的连线和标签加上。</strong></p>
+<p><strong>验证后，没有错误信息出现。</strong></p>
+<p><strong>到这里，这些错误就解决了。但我并不推荐这种方式。因为这样的设计方式，看图时会比较混乱，同一个NetLabel可能会出现在不同的原理图中，看图非常不方便。推荐使用下面的方式。</strong></p>
+<p>解决办法2：</p>
+<p>使用<strong>“Automatic (Based on project contents)”</strong></p>
+<p>这时候，我们需要遵循，网络标号（NetLabel）只在同一张原理图中出现，用来进行节点的连接，而跨原理图进行连接时，我们使用下面三种方式之一：</p>
+<ol>
+<li>
+<p>Ports(端口)：这种最方便，也便于在层次化原理图中使用。</p>
+</li>
+<li>
+<p>Signal Harness（信号线束类型）：
+    这个用起来稍微麻烦些，建议参考官方的层次化原理图进行探索。</p>
+</li>
+<li>
+<p>Off Sheet Connector(跨原理图连接符)：
+    用这个可以专门连接不同页原理图之间的引脚</p>
+<p>个人总结：</p>
+<p>我们如果将一张（子）原理图抽象成一个封装好的芯片，原理图里的元器件相当于芯片内部的晶体管等基础组件，Netlabel类型和wire类型相当于器件内部的连线。Port端口类型，相当于我们将芯片封装后给用户开放的芯片引脚。</p>
+<p>这样，一张子原理图就相当于我们自己封装的有一定功能的“元器件”，我们在进行系统化设计和层次化设计时，就可以调用之前设计的可以重复利用的子原理图了。</p>
+<p>下面介绍怎么用这种方式调整刚才的项目。</p>
+<p>首先，将<strong>Net Identifier Scope的下拉列表设置成了上表中的“Automatic(based on
+project contens)”</strong></p>
+<p><img alt="" src="media/b22cb6d56e7ecd5f36a27aec0ebb0d74.png" /></p>
+<p>然后，在项目名称处，右击进行“Validate PCB Project CT107D-V20.PrjPcb”</p>
+<p>这个时候，Message中的报错如下：</p>
+<p><img alt="" src="media/a71d75521f720d9ce9cc35d24bf630a5.png" /></p>
+<p>这个原因是因为这几个Netlabel在不同的原理图中出现，将他们换成对应类型的Port类型既可以解决。</p>
+<p>在OUTSIDE.SchDoc中，
+P20/SCL和P21/SDA的网络标号和MCU.SchDoc中的多个P20/SCL和P21/SDA 重名了。</p>
+<p><img alt="" src="media/d010ecaef61c29ab5a2ba8ee404d6dd8.png" /></p>
+<p>MCU.SchDoc中：</p>
+<p><img alt="" src="media/a4d2d6dc6bf69062db45514e1c54e339.png" /></p>
+<p>然后在顶层原理图对应的方块电路右击，选择“Synchronize Sheet Entries and
+Ports”</p>
+<p><img alt="" src="media/0b42aa5fced62b7d0a653653e73c5ecb.png" /></p>
+<p><img alt="" src="media/6a0e39efecc3fe5854953cc81c11751e.png" /></p>
+<p>鼠标会变成光标，带着两个端口出现在对应的方块电路中，点击放置，并进行连线。完成后，顶层方块电路中会出现一组P20/SCL和P21/SDA的新端口。</p>
+<p><img alt="" src="media/7e110426a23d9aa3bf39d07aa5c9956e.png" /></p>
+<p>在进行验证，错误里就没有这对端口的错误了：</p>
+<p><img alt="" src="media/e9af2df90fbb655235d535f7a1e2de63.png" /></p>
+<p>上面显示还剩四个错误，这四个错误的处理方式和刚才一样，将对应的NetLabel
+换成Port进行连接即可解决问题。</p>
+<p><img alt="" src="media/d79d1052d67fb37aba0f1b35cf1fd1cd.png" /></p>
+<p>修改为成的顶层如下：</p>
+<p><img alt="" src="media/04ba25ead287faa30f092eedcb758439.png" /></p>
+<p>在进行编译验证，只剩一种类型的警告，并提示没有错误：</p>
+<p><img alt="" src="media/518c32d9e153ece460aa9790280c3edb.png" /></p>
+<p>警告信息暂时可以忽略。</p>
+</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019-2021 <a href="https://xueyusky/">XueYuSky</a>, Maintained by the <a href="https://aiskylab.com">AISKyLab</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.3981fc68.min.js"></script>
+      
+    
+  </body>
+</html>
