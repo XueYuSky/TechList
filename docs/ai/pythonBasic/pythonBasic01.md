@@ -3,10 +3,25 @@
 ## 简介
 
 ## 安装
+安装教程我录制了视频，上传到了B站。
+
+
+
+<iframe 
+    height=450 
+    width=800 
+    src='https://player.bilibili.com/player.html?aid=455557817&bvid=BV1H5411473F&cid=186966986&page=1'
+    scrolling="no" 
+    frameborder="no" 
+    framespacing="0" 
+    allowfullscreen="true"> 
+</iframe>
+
+
+## 学习路径图
+[python100天学习框架](../../../img/pythonBasic/python100days.svg/)
 
 ## 语言基础
-
-
 
 ### 1. 变量
 
