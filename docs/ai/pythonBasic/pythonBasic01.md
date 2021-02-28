@@ -17,7 +17,6 @@
     allowfullscreen="true"> 
 </iframe>
 
-
 ## 学习路径图
 [python100天学习框架](../../../img/pythonBasic/python100days.svg/)
 

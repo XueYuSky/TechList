@@ -1,6 +1,6 @@
 site_name: 我的技术清单
 site_url: https://tech.xueyusky.cn
-site_description: Project documentation with Markdown.
+site_description: xueyusky's Technecal List Blog.
 site_author: XueYuSky
 
 repo_url: https://github.com/XueYuSky/TechList
@@ -43,6 +43,7 @@ nav:
         - 高速电路: hardware/todo.md
         - EMC与EMI: hardware/todo.md
         - PCB设计: hardware/AltiumDesigner入门到精通/index.md
+        - FPGA设计: hardware/FPGA设计/index.md
     - 嵌入式技能清单:
         - 嵌入式技能框架: embdesign/index.md
         - ToolsAndChains: embdesign/ToolsAndChains/index.md
