@@ -24,8 +24,12 @@ EDA技术应用涉及硬件、软件和语言三个方面。
 ---
 ### Intel 可编程逻辑器件常用列表
 
+TODO：待补充
+
 ---
 ### Xilinx可编程逻辑器件常用列表
+
+TODO：待补充
 
 ---
 ## 硬件描述语言
@@ -39,10 +43,12 @@ EDA技术应用涉及硬件、软件和语言三个方面。
 
 1. Quartus II 13.1 sp1 (学习与生产环境)
 2. Quartus II 20 sp1 (学习环境)
+3. Nios II 13.1
 
 二、 Xilinx集成开发环境
 1. [ISE 14.7](https://china.xilinx.com/products/design-tools/ise-design-suite.html)
 2. [Vivado 2018.3  (2020.2)](https://china.xilinx.com/products/design-tools/vivado/vivado-whats-new.html)
+3. [Vitis](https://china.xilinx.com/products/design-tools/vitis.html)
 
 ### 仿真软件
 1. ModelSim : Mentor Graphics ModelSim SE 2020.4 x64 
